@@ -247,9 +247,9 @@ function renderPrograms() {
       <div style="font-size:3.5rem;margin-bottom:1rem;color:${p.color}">${p.emoji}</div>
       <h3 class="font-heading font-bold text-white text-lg mb-2">${t[p.key] || p.key}</h3>
       <p style="color:rgba(255,255,255,0.5);font-size:.875rem;line-height:1.6;margin-bottom:1.2rem">${currentLang === 'ar' ? p.descAr : p.descEn}</p>
-      <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2rem ">
         <span style="font-size:.78rem;color:${p.color};font-weight:700;background:rgba(255,255,255,0.05);padding:.3rem .8rem;border-radius:50px;">${ageLabel} ${currentLang === 'ar' ? p.key_age : p.age}</span>
-        <a href="#contact" style="font-size:.8rem;color:${p.color};font-weight:700;text-decoration:none;transition:opacity .2s" onmouseenter="this.style.opacity='.7'" onmouseleave="this.style.opacity='1'">${btnTxt} →</a>
+        <a href="#contact" style="font-size:.8rem;color:${p.color};  border-radius:50px;padding:.3rem .8rem;background:rgba(255,255,255,0.05); font-weight:700;text-decoration:none;transition:opacity .2s" onmouseenter="this.style.opacity='.7'" onmouseleave="this.style.opacity='1'">${btnTxt} →</a>
       </div>
     </div>
   `).join('');
@@ -278,7 +278,7 @@ const pricing = [
       ar:['8 جلسات شهرياً','3 ورش عمل','دعم مميز','شهادة + وسام','أنشطة الذكاء العاطفي','جلسات أسرية']
     },
     cta:{ en:'Choose Growth', ar:'اختر النمو' },
-    featured: true, bg:'', textColor:'#fff'
+    featured: true, bg:'', textColor:'#ffffff'
   },
   {
     tier:{ en:'Impact', ar:'التأثير' },
