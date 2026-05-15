@@ -85,6 +85,8 @@ const i18n = {
     footer_copy:'© 2025 B-Genius Academy. All rights reserved.',
     footer_slogan:'Act to Impact — Building Tomorrow\'s Leaders Today',
     review_student:'Student', review_parent:'Parent', review_program:'Program',
+    footer_social_insta: 'Instagram', footer_social_wa: 'WhatsApp', footer_social_x: 'X', footer_social_tiktok: 'TikTok',
+    footer_privacy: 'Privacy Policy', footer_terms: 'Terms of Service', footer_nl_ph: 'Your email address',
   },
   ar: {
     brand:'بي جينيس', brand_sub:'أكاديمية',
@@ -169,6 +171,8 @@ const i18n = {
     footer_copy:'© 2025 أكاديمية بي جينيس. جميع الحقوق محفوظة.',
     footer_slogan:'تصرّف لتؤثّر — نبني قادة المستقبل اليوم',
     review_student:'الطالب', review_parent:'ولي الأمر', review_program:'البرنامج',
+    footer_social_insta: 'إنستغرام', footer_social_wa: 'واتساب', footer_social_x: 'إكس', footer_social_tiktok: 'تيك توك',
+    footer_privacy: 'سياسة الخصوصية', footer_terms: 'شروط الخدمة', footer_nl_ph: 'عنوان بريدك الإلكتروني',
   }
 };
 

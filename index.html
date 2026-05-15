@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr" id="html-root">
 
 <head>
@@ -7,12 +7,34 @@
   <meta name="theme-color" content="#071428" />
   <meta name="color-scheme" content="dark light" />
   <meta name="supported-color-schemes" content="dark light" />
-  <title>B-Genius Academy – Act to Impact</title>
+  <title>B-Genius Academy – Act to Impact </title>
   <meta name="description"
     content="B-Genius Academy: Interactive programs helping children and teens build confidence, emotional intelligence, creativity, and life skills." />
   <meta name="keywords"
     content="B-Genius Academy, children programs, confidence building, emotional intelligence, creativity, life skills, Kuwait" />
   <meta name="author" content="B-Genius Academy" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://b-genius.org/">
+  <meta property="og:title" content="B-Genius Academy – Act to Impact">
+  <meta property="og:description"
+    content="Interactive programs helping children and teens build confidence, emotional intelligence, creativity, and life skills.">
+  <meta property="og:image" content="https://b-genius.org/images/logo.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://b-genius.org/">
+  <meta property="twitter:title" content="B-Genius Academy – Act to Impact">
+  <meta property="twitter:description"
+    content="Interactive programs helping children and teens build confidence, emotional intelligence, creativity, and life skills.">
+  <meta property="twitter:image" content="https://b-genius.org/images/logo.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.json">
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -25,18 +47,27 @@
       theme: {
         extend: {
           colors: {
-            orange: { DEFAULT: '#f79002', dark: '#d97800', light: '#ffb340', glow: 'rgba(247,144,2,0.25)' },
-            navy: { DEFAULT: '#226fb4', dark: '#0d2240', darker: '#071428', mid: '#1a5490' },
-          }
-        }
-      }
-    }
+            orange: {
+              DEFAULT: "#f79002",
+              dark: "#d97800",
+              light: "#ffb340",
+              glow: "rgba(247,144,2,0.25)",
+            },
+            navy: {
+              DEFAULT: "#226fb4",
+              dark: "#0d2240",
+              darker: "#071428",
+              mid: "#1a5490",
+            },
+          },
+        },
+      },
+    };
   </script>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-
   <!-- ══════════════════════════════════════════════════
      NAVBAR
 ══════════════════════════════════════════════════ -->
@@ -46,17 +77,21 @@
       <a href="#" class="flex items-center gap-3 group" aria-label="B-Genius Academy home">
         <div class="relative">
           <div class="w-10 h-10 rounded-xl flex items-center justify-center font-heading font-black text-xl"
-            style="background:linear-gradient(135deg,#f79002,#ffb340);">
-            <span style="color:#fff">B</span>
+            style="background: linear-gradient(135deg, #f79002, #ffb340)">
+            <span style="color: #fff">B</span>
           </div>
           <div
             class="absolute -bottom-1 -right-1 w-5 h-5 rounded-lg flex items-center justify-center text-xs font-black"
-            style="background:#226fb4;color:#fff;">G</div>
+            style="background: #226fb4; color: #fff">
+            G
+          </div>
         </div>
         <div class="ltr:ml-1 rtl:mr-1">
-          <div class="font-heading font-black text-white text-lg leading-none tracking-tight" data-i18n="brand">B-Genius
+          <div class="font-heading font-black text-white text-lg leading-none tracking-tight" data-i18n="brand">
+            B-Genius
           </div>
-          <div class="text-xs font-medium" style="color:#f79002;letter-spacing:.06em" data-i18n="brand_sub">Academy
+          <div class="text-xs font-medium" style="color: #f79002; letter-spacing: 0.06em" data-i18n="brand_sub">
+            Academy
           </div>
         </div>
       </a>
@@ -64,7 +99,7 @@
       <!-- Desktop Nav -->
       <div class="hidden lg:flex items-center gap-8" role="menubar">
         <a href="#about" class="text-white/70 hover:text-orange-DEFAULT text-sm font-semibold transition-colors"
-          style="--tw-text-opacity:1" role="menuitem" data-i18n="nav_about">About</a>
+          style="--tw-text-opacity: 1" role="menuitem" data-i18n="nav_about">About</a>
         <a href="#programs" class="text-white/70 hover:text-white text-sm font-semibold transition-colors"
           role="menuitem" data-i18n="nav_programs">Programs</a>
         <a href="#pricing" class="text-white/70 hover:text-white text-sm font-semibold transition-colors"
@@ -79,8 +114,12 @@
       <div class="hidden lg:flex items-center gap-3">
         <!-- Lang Switcher -->
         <div class="flex items-center gap-1 bg-white/10 rounded-full p-1">
-          <button onclick="setLang('en')" id="btn-en" class="lang-btn active">EN</button>
-          <button onclick="setLang('ar')" id="btn-ar" class="lang-btn inactive">عر</button>
+          <button onclick="setLang('en')" id="btn-en" class="lang-btn active">
+            EN
+          </button>
+          <button onclick="setLang('ar')" id="btn-ar" class="lang-btn inactive">
+            عر
+          </button>
         </div>
         <a href="#contact" class="btn-primary text-sm py-2.5 px-5" data-i18n="nav_cta">Book Free Session</a>
       </div>
@@ -120,8 +159,18 @@
       <a href="#contact" onclick="toggleMenu()" class="text-white text-2xl font-heading font-bold" role="menuitem"
         data-i18n-m="nav_contact">Contact</a>
       <div class="flex items-center justify-center gap-2 mt-4">
-        <button onclick="setLang('en');toggleMenu()" class="lang-btn active" id="m-btn-en">EN</button>
-        <button onclick="setLang('ar');toggleMenu()" class="lang-btn inactive" id="m-btn-ar">عر</button>
+        <button onclick="
+              setLang('en');
+              toggleMenu();
+            " class="lang-btn active" id="m-btn-en">
+          EN
+        </button>
+        <button onclick="
+              setLang('ar');
+              toggleMenu();
+            " class="lang-btn inactive" id="m-btn-ar">
+          عر
+        </button>
       </div>
       <a href="#contact" onclick="toggleMenu()" class="btn-primary mx-auto mt-2" data-i18n-m="nav_cta">Book Free
         Session</a>
@@ -133,28 +182,30 @@
 ══════════════════════════════════════════════════ -->
   <section id="hero" class="bg-pattern">
     <!-- Orbs -->
-    <div class="hero-orb w-96 h-96 top-[-6rem] right-[-4rem]" style="background:rgba(247,144,2,.18)"></div>
-    <div class="hero-orb w-72 h-72 bottom-[5rem] left-[-3rem]" style="background:rgba(34,111,180,.2)"></div>
-    <div class="hero-orb w-48 h-48 top-1/2 left-1/3" style="background:rgba(247,144,2,.1)"></div>
+    <div class="hero-orb w-96 h-96 top-[-6rem] right-[-4rem]" style="background: rgba(247, 144, 2, 0.18)"></div>
+    <div class="hero-orb w-72 h-72 bottom-[5rem] left-[-3rem]" style="background: rgba(34, 111, 180, 0.2)"></div>
+    <div class="hero-orb w-48 h-48 top-1/2 left-1/3" style="background: rgba(247, 144, 2, 0.1)"></div>
 
     <!-- Decorative ring -->
     <div class="absolute top-24 right-16 w-64 h-64 opacity-10 animate-spin-slow hidden lg:block"
-      style="border:2px dashed #f79002;border-radius:50%"></div>
+      style="border: 2px dashed #f79002; border-radius: 50%"></div>
 
     <div class="relative max-w-7xl mx-auto px-6 pt-36 pb-24 lg:pt-44 lg:pb-32">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
-
         <!-- LEFT: Copy -->
         <div class="reveal-left">
-          <div class="section-label" data-i18n="hero_label">✦ Act to Impact</div>
+          <div class="section-label" data-i18n="hero_label">
+            ✦ Act to Impact
+          </div>
           <h1
             class="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.08] mb-6 tracking-tight">
             <span data-i18n="hero_h1a">Where Potential</span><br />
             <span class="grad-text" data-i18n="hero_h1b">Becomes Purpose.</span>
           </h1>
           <p class="text-white/65 text-lg leading-relaxed mb-8 max-w-lg" data-i18n="hero_sub">
-            Interactive programs that help children and teenagers build confidence, emotional intelligence, creativity,
-            communication, and life skills.
+            Interactive programs that help children and teenagers build
+            confidence, emotional intelligence, creativity, communication, and
+            life skills.
           </p>
 
           <div class="flex flex-wrap gap-3 mb-10">
@@ -165,20 +216,36 @@
           <!-- Trust badges -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 stagger">
             <div class="glass-card reveal p-3 text-center">
-              <div class="text-3xl mb-2" style="color: #10b981;"><i class="ph-duotone ph-plant"></i></div>
-              <div class="text-white text-xs font-semibold" data-i18n="badge1">Positive Learning</div>
+              <div class="text-3xl mb-2" style="color: #10b981">
+                <i class="ph-duotone ph-plant"></i>
+              </div>
+              <div class="text-white text-xs font-semibold" data-i18n="badge1">
+                Positive Learning
+              </div>
             </div>
             <div class="glass-card reveal p-3 text-center">
-              <div class="text-3xl mb-2" style="color: #f59e0b;"><i class="ph-duotone ph-medal"></i></div>
-              <div class="text-white text-xs font-semibold" data-i18n="badge2">Certified Trainers</div>
+              <div class="text-3xl mb-2" style="color: #f59e0b">
+                <i class="ph-duotone ph-medal"></i>
+              </div>
+              <div class="text-white text-xs font-semibold" data-i18n="badge2">
+                Certified Trainers
+              </div>
             </div>
             <div class="glass-card reveal p-3 text-center">
-              <div class="text-3xl mb-2" style="color: #8b5cf6;"><i class="ph-duotone ph-palette"></i></div>
-              <div class="text-white text-xs font-semibold" data-i18n="badge3">Interactive Activities</div>
+              <div class="text-3xl mb-2" style="color: #8b5cf6">
+                <i class="ph-duotone ph-palette"></i>
+              </div>
+              <div class="text-white text-xs font-semibold" data-i18n="badge3">
+                Interactive Activities
+              </div>
             </div>
             <div class="glass-card reveal p-3 text-center">
-              <div class="text-3xl mb-2" style="color: #3b82f6;"><i class="ph-duotone ph-users"></i></div>
-              <div class="text-white text-xs font-semibold" data-i18n="badge4">Family-Focused</div>
+              <div class="text-3xl mb-2" style="color: #3b82f6">
+                <i class="ph-duotone ph-users"></i>
+              </div>
+              <div class="text-white text-xs font-semibold" data-i18n="badge4">
+                Family-Focused
+              </div>
             </div>
           </div>
         </div>
@@ -186,12 +253,24 @@
         <!-- RIGHT: Visual -->
         <div class="relative reveal-right hidden lg:block">
           <!-- Main visual card -->
-          <div class="relative mx-auto" style="max-width:420px">
+          <div class="relative mx-auto" style="max-width: 420px">
             <!-- Abstract student illustration -->
-            <div class="relative rounded-3xl overflow-hidden"
-              style="background:linear-gradient(145deg,#1a5490,#226fb4,#f79002);padding:3px">
-              <div class="rounded-3xl overflow-hidden"
-                style="background:linear-gradient(160deg,#0d2a4a,#1a3d6e);min-height:420px;display:flex;align-items:center;justify-content:center">
+            <div class="relative rounded-3xl overflow-hidden" style="
+                  background: linear-gradient(
+                    145deg,
+                    #1a5490,
+                    #226fb4,
+                    #f79002
+                  );
+                  padding: 3px;
+                ">
+              <div class="rounded-3xl overflow-hidden" style="
+                    background: linear-gradient(160deg, #0d2a4a, #1a3d6e);
+                    min-height: 420px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  ">
                 <svg viewBox="0 0 380 400" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                   <!-- Background elements -->
                   <circle cx="190" cy="200" r="140" fill="rgba(34,111,180,0.15)" />
@@ -203,41 +282,60 @@
                   <rect x="145" y="250" width="90" height="65" rx="5" fill="rgba(255,255,255,0.15)" />
                   <line x1="190" y1="250" x2="190" y2="315" stroke="rgba(255,255,255,0.3)" stroke-width="2" />
                   <!-- Stars -->
-                  <text x="130" y="100" font-size="20" fill="#f79002" opacity="0.8">★</text>
-                  <text x="230" y="80" font-size="14" fill="#f79002" opacity="0.6">★</text>
-                  <text x="260" y="170" font-size="16" fill="#ffce6a" opacity="0.5">★</text>
+                  <text x="130" y="100" font-size="20" fill="#f79002" opacity="0.8">
+                    ★
+                  </text>
+                  <text x="230" y="80" font-size="14" fill="#f79002" opacity="0.6">
+                    ★
+                  </text>
+                  <text x="260" y="170" font-size="16" fill="#ffce6a" opacity="0.5">
+                    ★
+                  </text>
                   <!-- Light rays -->
                   <line x1="190" y1="20" x2="190" y2="50" stroke="#f79002" stroke-width="2" opacity="0.3" />
                   <line x1="310" y1="90" x2="295" y2="110" stroke="#f79002" stroke-width="2" opacity="0.25" />
                   <line x1="70" y1="90" x2="85" y2="110" stroke="#f79002" stroke-width="2" opacity="0.25" />
                   <!-- Text -->
                   <text x="190" y="370" text-anchor="middle" font-family="Syne,sans-serif" font-weight="800"
-                    font-size="13" fill="rgba(255,255,255,0.5)" letter-spacing="3">B-GENIUS</text>
+                    font-size="13" fill="rgba(255,255,255,0.5)" letter-spacing="3">
+                    B-GENIUS
+                  </text>
                 </svg>
               </div>
             </div>
 
             <!-- Floating stat cards -->
-            <div class="glass-card absolute -top-6 -left-10 p-4 animate-float" style="min-width:140px">
-              <div class="text-3xl font-black font-heading" style="color:#f79002">500+</div>
-              <div class="text-white/70 text-xs font-medium mt-0.5" data-i18n="stat1">Students Transformed</div>
+            <div class="glass-card absolute -top-6 -left-10 p-4 animate-float" style="min-width: 140px">
+              <div class="text-3xl font-black font-heading" style="color: #f79002">
+                500+
+              </div>
+              <div class="text-white/70 text-xs font-medium mt-0.5" data-i18n="stat1">
+                Students Transformed
+              </div>
             </div>
-            <div class="glass-card absolute -bottom-4 -right-8 p-4 animate-float-2" style="min-width:150px">
-              <div class="text-3xl font-black font-heading" style="color:#f79002">8</div>
-              <div class="text-white/70 text-xs font-medium mt-0.5" data-i18n="stat2">Specialized Programs</div>
+            <div class="glass-card absolute -bottom-4 -right-8 p-4 animate-float-2" style="min-width: 150px">
+              <div class="text-3xl font-black font-heading" style="color: #f79002">
+                8
+              </div>
+              <div class="text-white/70 text-xs font-medium mt-0.5" data-i18n="stat2">
+                Specialized Programs
+              </div>
             </div>
             <div class="glass-card absolute top-1/2 -right-12 p-3 animate-float-3">
               <div class="flex items-center gap-2">
-                <span class="text-3xl" style="color: #f59e0b;"><i class="ph-duotone ph-star"></i></span>
+                <span class="text-3xl" style="color: #f59e0b"><i class="ph-duotone ph-star"></i></span>
                 <div>
-                  <div class="text-white font-black text-lg font-heading">4.9</div>
-                  <div class="text-white/60 text-xs" data-i18n="stat3">Parent Rating</div>
+                  <div class="text-white font-black text-lg font-heading">
+                    4.9
+                  </div>
+                  <div class="text-white/60 text-xs" data-i18n="stat3">
+                    Parent Rating
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
 
@@ -252,15 +350,14 @@
   <!-- ══════════════════════════════════════════════════
      ABOUT SECTION
 ══════════════════════════════════════════════════ -->
-  <section id="about" class="section-pad bg-pattern-light" style="background-color:#f8f9fc">
+  <section id="about" class="section-pad bg-pattern-light" style="background-color: #f8f9fc">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
-
         <!-- Left: Visual collage -->
         <div class="relative reveal-left">
           <div class="relative">
             <!-- Main image placeholder -->
-            <div class="rounded-3xl overflow-hidden h-96" style="background:linear-gradient(145deg,#226fb4,#0d2240)">
+            <div class="rounded-3xl overflow-hidden h-96" style="background: linear-gradient(145deg, #226fb4, #0d2240)">
               <svg viewBox="0 0 500 380" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <!-- Grid of student icons -->
                 <rect width="500" height="380" fill="#0d2240" />
@@ -282,92 +379,142 @@
                 </g>
                 <!-- Text overlay -->
                 <text x="250" y="340" text-anchor="middle" font-family="Syne,sans-serif" font-weight="900"
-                  font-size="22" fill="rgba(255,255,255,0.08)" letter-spacing="8">B-GENIUS ACADEMY</text>
+                  font-size="22" fill="rgba(255,255,255,0.08)" letter-spacing="8">
+                  B-GENIUS ACADEMY
+                </text>
               </svg>
             </div>
 
             <!-- Floating achievement cards -->
-            <div class="absolute -bottom-8 -right-6 glass-card animate-float"
-              style="background:linear-gradient(135deg,#226fb4,#1a5490);padding:1.2rem;max-width:200px">
-              <div class="text-3xl font-black font-heading text-white">10+</div>
-              <div class="text-white/70 text-sm" data-i18n="about_years">Years of Experience</div>
+            <div class="absolute -bottom-8 -right-6 glass-card animate-float" style="
+                  background: linear-gradient(135deg, #226fb4, #1a5490);
+                  padding: 1.2rem;
+                  max-width: 200px;
+                ">
+              <div class="text-3xl font-black font-heading text-white">
+                10+
+              </div>
+              <div class="text-white/70 text-sm" data-i18n="about_years">
+                Years of Experience
+              </div>
             </div>
-            <div class="absolute -top-6 -left-6 glass-card animate-float-2"
-              style="background:#fff;padding:1.2rem;max-width:180px;box-shadow:0 10px 40px rgba(34,111,180,0.18)">
-              <div class="text-3xl mb-2" style="color: #f59e0b;"><i class="ph-duotone ph-trophy"></i></div>
-              <div class="font-heading font-bold text-navy-dark text-sm" style="color:#0d2240" data-i18n="about_award">
-                Award-Winning Programs</div>
+            <div class="absolute -top-6 -left-6 glass-card animate-float-2" style="
+                  background: #fff;
+                  padding: 1.2rem;
+                  max-width: 180px;
+                  box-shadow: 0 10px 40px rgba(34, 111, 180, 0.18);
+                ">
+              <div class="text-3xl mb-2" style="color: #f59e0b">
+                <i class="ph-duotone ph-trophy"></i>
+              </div>
+              <div class="font-heading font-bold text-navy-dark text-sm" style="color: #0d2240" data-i18n="about_award">
+                Award-Winning Programs
+              </div>
             </div>
           </div>
         </div>
 
         <!-- Right: Content -->
         <div class="reveal-right">
-          <div class="section-label" data-i18n="about_label">✦ Who We Are</div>
+          <div class="section-label" data-i18n="about_label">
+            ✦ Who We Are
+          </div>
           <h2 class="font-heading text-4xl lg:text-5xl font-black text-navy-dark leading-tight mb-6"
-            style="color:#0d2240">
+            style="color: #0d2240">
             <span data-i18n="about_h2a">Building Tomorrow's</span><br />
             <span class="grad-text" data-i18n="about_h2b">Leaders, Today.</span>
           </h2>
           <p class="text-gray-500 text-lg leading-relaxed mb-8" data-i18n="about_desc">
-            At B-Genius Academy, we believe in understanding before guiding. Our approach combines positive education,
-            interactive learning, and emotional development to help every child discover their unique potential.
+            At B-Genius Academy, we believe in understanding before guiding.
+            Our approach combines positive education, interactive learning,
+            and emotional development to help every child discover their
+            unique potential.
           </p>
 
           <!-- Values grid -->
           <div class="grid grid-cols-2 gap-4 stagger">
-            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
-              style="background:rgba(247,144,2,0.06);border:1px solid rgba(247,144,2,0.15)">
-              <span class="text-3xl" style="color: #ec4899;"><i class="ph-duotone ph-brain"></i></span>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl" style="
+                  background: rgba(247, 144, 2, 0.06);
+                  border: 1px solid rgba(247, 144, 2, 0.15);
+                ">
+              <span class="text-3xl" style="color: #ec4899"><i class="ph-duotone ph-brain"></i></span>
               <div>
-                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val1_t">Positive Education
+                <div class="font-heading font-bold text-sm" style="color: #0d2240" data-i18n="val1_t">
+                  Positive Education
                 </div>
-                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val1_d">Strength-based approach</div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val1_d">
+                  Strength-based approach
+                </div>
               </div>
             </div>
-            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
-              style="background:rgba(34,111,180,0.06);border:1px solid rgba(34,111,180,0.12)">
-              <span class="text-3xl" style="color: #ef4444;"><i class="ph-duotone ph-heart"></i></span>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl" style="
+                  background: rgba(34, 111, 180, 0.06);
+                  border: 1px solid rgba(34, 111, 180, 0.12);
+                ">
+              <span class="text-3xl" style="color: #ef4444"><i class="ph-duotone ph-heart"></i></span>
               <div>
-                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val2_t">Emotional Growth
+                <div class="font-heading font-bold text-sm" style="color: #0d2240" data-i18n="val2_t">
+                  Emotional Growth
                 </div>
-                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val2_d">EQ development focus</div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val2_d">
+                  EQ development focus
+                </div>
               </div>
             </div>
-            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
-              style="background:rgba(34,111,180,0.06);border:1px solid rgba(34,111,180,0.12)">
-              <span class="text-3xl" style="color: #f97316;"><i class="ph-duotone ph-target"></i></span>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl" style="
+                  background: rgba(34, 111, 180, 0.06);
+                  border: 1px solid rgba(34, 111, 180, 0.12);
+                ">
+              <span class="text-3xl" style="color: #f97316"><i class="ph-duotone ph-target"></i></span>
               <div>
-                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val3_t">Confidence Building
+                <div class="font-heading font-bold text-sm" style="color: #0d2240" data-i18n="val3_t">
+                  Confidence Building
                 </div>
-                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val3_d">Empowering every child</div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val3_d">
+                  Empowering every child
+                </div>
               </div>
             </div>
-            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
-              style="background:rgba(247,144,2,0.06);border:1px solid rgba(247,144,2,0.15)">
-              <span class="text-3xl" style="color: #3b82f6;"><i class="ph-duotone ph-users"></i></span>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl" style="
+                  background: rgba(247, 144, 2, 0.06);
+                  border: 1px solid rgba(247, 144, 2, 0.15);
+                ">
+              <span class="text-3xl" style="color: #3b82f6"><i class="ph-duotone ph-users"></i></span>
               <div>
-                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val4_t">Family Partnership
+                <div class="font-heading font-bold text-sm" style="color: #0d2240" data-i18n="val4_t">
+                  Family Partnership
                 </div>
-                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val4_d">Parents as co-creators</div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val4_d">
+                  Parents as co-creators
+                </div>
               </div>
             </div>
-            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
-              style="background:rgba(247,144,2,0.06);border:1px solid rgba(247,144,2,0.15)">
-              <span class="text-3xl" style="color: #8b5cf6;"><i class="ph-duotone ph-palette"></i></span>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl" style="
+                  background: rgba(247, 144, 2, 0.06);
+                  border: 1px solid rgba(247, 144, 2, 0.15);
+                ">
+              <span class="text-3xl" style="color: #8b5cf6"><i class="ph-duotone ph-palette"></i></span>
               <div>
-                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val5_t">Interactive
-                  Learning</div>
-                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val5_d">Hands-on activities</div>
+                <div class="font-heading font-bold text-sm" style="color: #0d2240" data-i18n="val5_t">
+                  Interactive Learning
+                </div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val5_d">
+                  Hands-on activities
+                </div>
               </div>
             </div>
-            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
-              style="background:rgba(34,111,180,0.06);border:1px solid rgba(34,111,180,0.12)">
-              <span class="text-3xl" style="color: #f59e0b;"><i class="ph-duotone ph-star"></i></span>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl" style="
+                  background: rgba(34, 111, 180, 0.06);
+                  border: 1px solid rgba(34, 111, 180, 0.12);
+                ">
+              <span class="text-3xl" style="color: #f59e0b"><i class="ph-duotone ph-star"></i></span>
               <div>
-                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val6_t">Creative Expression
+                <div class="font-heading font-bold text-sm" style="color: #0d2240" data-i18n="val6_t">
+                  Creative Expression
                 </div>
-                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val6_d">Arts & communication</div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val6_d">
+                  Arts & communication
+                </div>
               </div>
             </div>
           </div>
@@ -379,7 +526,7 @@
   <!-- ══════════════════════════════════════════════════
      PROGRAMS SECTION
 ══════════════════════════════════════════════════ -->
-  <section id="programs" class="section-pad" style="background:#0d2240">
+  <section id="programs" class="section-pad" style="background: #0d2240">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-16 reveal">
         <div class="section-label" data-i18n="prog_label">✦ Our Programs</div>
@@ -388,8 +535,8 @@
           <span class="grad-text" data-i18n="prog_h2b">Every Stage of Growth</span>
         </h2>
         <p class="text-white/55 mt-4 text-lg max-w-2xl mx-auto" data-i18n="prog_sub">
-          Eight specialized programs crafted by child development experts to nurture the whole child — mind, heart, and
-          character.
+          Eight specialized programs crafted by child development experts to
+          nurture the whole child — mind, heart, and character.
         </p>
       </div>
 
@@ -402,11 +549,13 @@
   <!-- ══════════════════════════════════════════════════
      PRICING SECTION
 ══════════════════════════════════════════════════ -->
-  <section id="pricing" class="section-pad bg-pattern" style="background-color:#f8f9fc">
+  <section id="pricing" class="section-pad bg-pattern" style="background-color: #f8f9fc">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16 reveal">
-        <div class="section-label" data-i18n="price_label">✦ Investment Plans</div>
-        <h2 class="font-heading text-4xl lg:text-5xl font-black leading-tight mt-3" style="color:#0d2240">
+        <div class="section-label" data-i18n="price_label">
+          ✦ Investment Plans
+        </div>
+        <h2 class="font-heading text-4xl lg:text-5xl font-black leading-tight mt-3" style="color: #0d2240">
           <span data-i18n="price_h2a">Choose Your</span><br />
           <span class="grad-text" data-i18n="price_h2b">Growth Journey</span>
         </h2>
@@ -424,10 +573,12 @@
   <!-- ══════════════════════════════════════════════════
      TESTIMONIALS SECTION
 ══════════════════════════════════════════════════ -->
-  <section id="testimonials" class="section-pad" style="background:#071428">
+  <section id="testimonials" class="section-pad" style="background: #071428">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-14 reveal">
-        <div class="section-label" data-i18n="test_label">✦ Success Stories</div>
+        <div class="section-label" data-i18n="test_label">
+          ✦ Success Stories
+        </div>
         <h2 class="font-heading text-4xl lg:text-5xl font-black text-white mt-3">
           <span data-i18n="test_h2a">Families Who</span>
           <span class="grad-text" data-i18n="test_h2b"> Transformed</span>
@@ -445,7 +596,7 @@
         <div class="flex items-center justify-center gap-4 mt-8">
           <button onclick="prevSlide()"
             class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110"
-            style="background:rgba(255,255,255,0.1);color:#fff">
+            style="background: rgba(255, 255, 255, 0.1); color: #fff">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="13,5 7,10 13,15" />
             </svg>
@@ -453,7 +604,7 @@
           <div class="flex gap-2" id="test-dots"></div>
           <button onclick="nextSlide()"
             class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110"
-            style="background:rgba(255,255,255,0.1);color:#fff">
+            style="background: rgba(255, 255, 255, 0.1); color: #fff">
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
               <polyline points="7,5 13,10 7,15" />
             </svg>
@@ -466,36 +617,47 @@
   <!-- ══════════════════════════════════════════════════
      REGISTRATION / CONTACT FORM
 ══════════════════════════════════════════════════ -->
-  <section id="contact" class="section-pad bg-pattern" style="background-color:#f0f5fb">
+  <section id="contact" class="section-pad bg-pattern" style="background-color: #f0f5fb">
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-12 reveal">
         <div class="section-label" data-i18n="form_label">✦ Join Us</div>
-        <h2 class="font-heading text-4xl lg:text-5xl font-black leading-tight mt-3" style="color:#0d2240">
+        <h2 class="font-heading text-4xl lg:text-5xl font-black leading-tight mt-3" style="color: #0d2240">
           <span data-i18n="form_h2a">Register Your</span>
           <span class="grad-text" data-i18n="form_h2b"> Child Today</span>
         </h2>
-        <p class="text-gray-400 mt-4 text-lg" data-i18n="form_sub">Complete the form below and our team will contact you
-          within 24 hours.</p>
+        <p class="text-gray-400 mt-4 text-lg" data-i18n="form_sub">
+          Complete the form below and our team will contact you within 24
+          hours.
+        </p>
       </div>
 
-      <div class="reveal"
-        style="background:#fff;border-radius:32px;box-shadow:0 20px 80px rgba(34,111,180,0.15);overflow:hidden">
+      <div class="reveal" style="
+            background: #fff;
+            border-radius: 32px;
+            box-shadow: 0 20px 80px rgba(34, 111, 180, 0.15);
+            overflow: hidden;
+          ">
         <!-- Progress indicator -->
-        <div style="background:linear-gradient(135deg,#0d2240,#226fb4);padding:2rem">
+        <div style="
+              background: linear-gradient(135deg, #0d2240, #226fb4);
+              padding: 2rem;
+            ">
           <div class="flex items-center justify-center gap-0" id="progress-bar">
             <!-- Injected by JS -->
           </div>
           <div class="text-center mt-4">
-            <div class="text-white font-heading font-bold text-lg" id="step-title" data-i18n="step1_title">Student
-              Information</div>
-            <div class="text-white/50 text-sm mt-1" id="step-subtitle" data-i18n="step1_sub">Step 1 of 4</div>
+            <div class="text-white font-heading font-bold text-lg" id="step-title" data-i18n="step1_title">
+              Student Information
+            </div>
+            <div class="text-white/50 text-sm mt-1" id="step-subtitle" data-i18n="step1_sub">
+              Step 1 of 4
+            </div>
           </div>
         </div>
 
         <!-- Form body -->
-        <div style="padding:2.5rem">
+        <div style="padding: 2.5rem">
           <form id="reg-form" onsubmit="return false;">
-
             <!-- STEP 1: Student Info -->
             <div class="step-panel active" id="step-1">
               <div class="grid md:grid-cols-2 gap-5">
@@ -507,14 +669,22 @@
                 <div>
                   <label class="form-label" for="gender" data-i18n="f_gender">Gender</label>
                   <select class="form-select" id="gender" name="gender" required>
-                    <option value="" data-i18n="sel_gender">Select gender</option>
+                    <option value="" data-i18n="sel_gender">
+                      Select gender
+                    </option>
                     <option value="male" data-i18n="opt_male">Male</option>
-                    <option value="female" data-i18n="opt_female">Female</option>
+                    <option value="female" data-i18n="opt_female">
+                      Female
+                    </option>
                   </select>
                 </div>
                 <div>
                   <label class="form-label" for="dob" data-i18n="f_dob">Date of Birth</label>
-                  <input type="date" class="form-input" id="dob" name="dob" required />
+                  <input type="date" class="form-input" id="dob" name="dob" required onclick="
+                        try {
+                          this.showPicker();
+                        } catch (e) {}
+                      " style="cursor: pointer" />
                 </div>
                 <div>
                   <label class="form-label" for="age" data-i18n="f_age">Age</label>
@@ -529,11 +699,21 @@
                 <div>
                   <label class="form-label" for="stage" data-i18n="f_stage">School Stage</label>
                   <select class="form-select" id="stage" name="stage" required>
-                    <option value="" data-i18n="sel_stage">Select stage</option>
-                    <option value="kindergarten" data-i18n="opt_kinder">Kindergarten</option>
-                    <option value="primary" data-i18n="opt_primary">Primary</option>
-                    <option value="middle" data-i18n="opt_middle">Middle School</option>
-                    <option value="high" data-i18n="opt_high">High School</option>
+                    <option value="" data-i18n="sel_stage">
+                      Select stage
+                    </option>
+                    <option value="kindergarten" data-i18n="opt_kinder">
+                      Kindergarten
+                    </option>
+                    <option value="primary" data-i18n="opt_primary">
+                      Primary
+                    </option>
+                    <option value="middle" data-i18n="opt_middle">
+                      Middle School
+                    </option>
+                    <option value="high" data-i18n="opt_high">
+                      High School
+                    </option>
                   </select>
                 </div>
                 <div>
@@ -545,9 +725,10 @@
                   <label class="form-label" for="medical" data-i18n="f_medical">Medical Conditions (if any)</label>
                   <textarea class="form-input" id="medical" name="medical" rows="3"
                     placeholder="Describe any relevant medical conditions..." data-i18n-ph="ph_medical"
-                    style="resize:vertical" aria-describedby="medical-help"></textarea>
-                  <div id="medical-help" class="text-xs text-gray-400 mt-1">Optional: This helps us provide better
-                    support if needed.</div>
+                    style="resize: vertical" aria-describedby="medical-help"></textarea>
+                  <div id="medical-help" class="text-xs text-gray-400 mt-1">
+                    Optional: This helps us provide better support if needed.
+                  </div>
                 </div>
               </div>
             </div>
@@ -563,10 +744,18 @@
                 <div>
                   <label class="form-label" data-i18n="f_relation">Relationship to Student</label>
                   <select class="form-select" id="relation">
-                    <option value="" data-i18n="sel_relation">Select relationship</option>
-                    <option value="father" data-i18n="opt_father">Father</option>
-                    <option value="mother" data-i18n="opt_mother">Mother</option>
-                    <option value="guardian" data-i18n="opt_guardian">Guardian</option>
+                    <option value="" data-i18n="sel_relation">
+                      Select relationship
+                    </option>
+                    <option value="father" data-i18n="opt_father">
+                      Father
+                    </option>
+                    <option value="mother" data-i18n="opt_mother">
+                      Mother
+                    </option>
+                    <option value="guardian" data-i18n="opt_guardian">
+                      Guardian
+                    </option>
                     <option value="other" data-i18n="opt_other">Other</option>
                   </select>
                 </div>
@@ -599,33 +788,63 @@
                 <div class="md:col-span-2">
                   <label class="form-label" for="program" data-i18n="f_program">Program Name</label>
                   <select class="form-select" id="program" name="program" required>
-                    <option value="" data-i18n="sel_program">Select a program</option>
-                    <option value="mindful" data-i18n="p1">Mindful Program</option>
-                    <option value="creative" data-i18n="p2">Creative Voices Hub</option>
-                    <option value="behavior" data-i18n="p3">Genius Behavior Heroes</option>
-                    <option value="heartart" data-i18n="p4">Genius Heart &amp; Art</option>
-                    <option value="mindlab" data-i18n="p5">Be Genius Mindfulness Lab</option>
-                    <option value="leaders" data-i18n="p6">Little Life Leaders</option>
-                    <option value="parenting" data-i18n="p7">Positive Parenting Sessions</option>
-                    <option value="riseshine" data-i18n="p8">Rise &amp; Shine Club</option>
+                    <option value="" data-i18n="sel_program">
+                      Select a program
+                    </option>
+                    <option value="mindful" data-i18n="p1">
+                      Mindful Program
+                    </option>
+                    <option value="creative" data-i18n="p2">
+                      Creative Voices Hub
+                    </option>
+                    <option value="behavior" data-i18n="p3">
+                      Genius Behavior Heroes
+                    </option>
+                    <option value="heartart" data-i18n="p4">
+                      Genius Heart &amp; Art
+                    </option>
+                    <option value="mindlab" data-i18n="p5">
+                      Be Genius Mindfulness Lab
+                    </option>
+                    <option value="leaders" data-i18n="p6">
+                      Little Life Leaders
+                    </option>
+                    <option value="parenting" data-i18n="p7">
+                      Positive Parenting Sessions
+                    </option>
+                    <option value="riseshine" data-i18n="p8">
+                      Rise &amp; Shine Club
+                    </option>
                   </select>
                 </div>
                 <div>
                   <label class="form-label" for="subtype" data-i18n="f_subtype">Subscription Type</label>
                   <select class="form-select" id="subtype" name="subtype" required>
                     <option value="" data-i18n="sel_sub">Select type</option>
-                    <option value="starter" data-i18n="sub_starter">Starter</option>
-                    <option value="growth" data-i18n="sub_growth">Growth (Most Popular)</option>
-                    <option value="impact" data-i18n="sub_impact">Impact</option>
+                    <option value="starter" data-i18n="sub_starter">
+                      Starter
+                    </option>
+                    <option value="growth" data-i18n="sub_growth">
+                      Growth (Most Popular)
+                    </option>
+                    <option value="impact" data-i18n="sub_impact">
+                      Impact
+                    </option>
                   </select>
                 </div>
                 <div>
                   <label class="form-label" for="duration" data-i18n="f_duration">Program Duration</label>
                   <select class="form-select" id="duration" name="duration" required>
-                    <option value="" data-i18n="sel_dur">Select duration</option>
+                    <option value="" data-i18n="sel_dur">
+                      Select duration
+                    </option>
                     <option value="1month" data-i18n="dur_1">1 Month</option>
-                    <option value="3months" data-i18n="dur_3">3 Months</option>
-                    <option value="6months" data-i18n="dur_6">6 Months</option>
+                    <option value="3months" data-i18n="dur_3">
+                      3 Months
+                    </option>
+                    <option value="6months" data-i18n="dur_6">
+                      6 Months
+                    </option>
                     <option value="1year" data-i18n="dur_12">1 Year</option>
                   </select>
                 </div>
@@ -638,19 +857,29 @@
                 <div>
                   <label class="form-label" for="pref-time" data-i18n="f_time">Preferred Time</label>
                   <select class="form-select" id="pref-time" name="pref_time" required>
-                    <option value="" data-i18n="sel_time">Select time slot</option>
-                    <option value="morning" data-i18n="time_m">Morning (9AM – 12PM)</option>
-                    <option value="afternoon" data-i18n="time_a">Afternoon (1PM – 4PM)</option>
-                    <option value="evening" data-i18n="time_e">Evening (5PM – 8PM)</option>
+                    <option value="" data-i18n="sel_time">
+                      Select time slot
+                    </option>
+                    <option value="morning" data-i18n="time_m">
+                      Morning (9AM – 12PM)
+                    </option>
+                    <option value="afternoon" data-i18n="time_a">
+                      Afternoon (1PM – 4PM)
+                    </option>
+                    <option value="evening" data-i18n="time_e">
+                      Evening (5PM – 8PM)
+                    </option>
                   </select>
                 </div>
                 <div class="md:col-span-2">
                   <label class="form-label" for="notes" data-i18n="f_notes">Additional Notes</label>
                   <textarea class="form-input" id="notes" name="notes" rows="3"
-                    placeholder="Any special requests or notes..." data-i18n-ph="ph_notes" style="resize:vertical"
+                    placeholder="Any special requests or notes..." data-i18n-ph="ph_notes" style="resize: vertical"
                     aria-describedby="notes-help"></textarea>
-                  <div id="notes-help" class="text-xs text-gray-400 mt-1">Optional: Provide any additional information
-                    that helps us better serve you.</div>
+                  <div id="notes-help" class="text-xs text-gray-400 mt-1">
+                    Optional: Provide any additional information that helps us
+                    better serve you.
+                  </div>
                 </div>
               </div>
             </div>
@@ -658,57 +887,71 @@
             <!-- STEP 4: Review & Confirm -->
             <div class="step-panel" id="step-4">
               <div class="text-center py-8">
-                <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                  style="background:linear-gradient(135deg,#f79002,#ffb340)">
+                <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style="
+                      background: linear-gradient(135deg, #f79002, #ffb340);
+                    ">
                   <svg width="36" height="36" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
                     <polyline points="6,18 14,24 30,10" />
                   </svg>
                 </div>
-                <h3 class="font-heading font-black text-2xl mb-3" style="color:#0d2240" data-i18n="confirm_title">Ready
-                  to Submit!</h3>
-                <p class="text-gray-400 text-lg mb-8" data-i18n="confirm_sub">Please review and submit your
-                  registration. Our team will contact you within 24 hours.</p>
-                <div id="review-summary" class="text-left rounded-2xl p-6 mb-6" style="background:#f0f5fb">
+                <h3 class="font-heading font-black text-2xl mb-3" style="color: #0d2240" data-i18n="confirm_title">
+                  Ready to Submit!
+                </h3>
+                <p class="text-gray-400 text-lg mb-8" data-i18n="confirm_sub">
+                  Please review and submit your registration. Our team will
+                  contact you within 24 hours.
+                </p>
+                <div id="review-summary" class="text-left rounded-2xl p-6 mb-6" style="background: #f0f5fb">
                   <!-- Summary injected by JS -->
                 </div>
                 <!-- Terms -->
                 <label class="flex items-start gap-3 text-sm text-gray-400 mb-6 text-left cursor-pointer">
                   <input type="checkbox" id="terms" class="mt-0.5 w-4 h-4 accent-orange-500 rounded" />
-                  <span data-i18n="terms_text">I agree to the Terms & Conditions and Privacy Policy of B-Genius Academy.
-                    I confirm that all information provided is accurate.</span>
+                  <span data-i18n="terms_text">I agree to the Terms & Conditions and Privacy Policy of
+                    B-Genius Academy. I confirm that all information provided
+                    is accurate.</span>
                 </label>
                 <button onclick="submitForm()" class="btn-primary w-full justify-center text-lg py-4"
-                  data-i18n="submit_btn">Submit Registration</button>
+                  data-i18n="submit_btn">
+                  Submit Registration
+                </button>
               </div>
             </div>
 
             <!-- Success State -->
             <div class="step-panel" id="step-success">
               <div class="text-center py-12">
-                <div class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 animate-glow"
-                  style="background:linear-gradient(135deg,#f79002,#ffb340)">
+                <div class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 animate-glow" style="
+                      background: linear-gradient(135deg, #f79002, #ffb340);
+                    ">
                   <svg width="44" height="44" fill="none" stroke="white" stroke-width="3" stroke-linecap="round">
                     <polyline points="8,22 18,30 36,12" />
                   </svg>
                 </div>
-                <h3 class="font-heading font-black text-3xl mb-3" style="color:#0d2240" data-i18n="success_title">
-                  Registration Successful!</h3>
-                <p class="text-gray-400 text-lg max-w-md mx-auto" data-i18n="success_sub">Thank you for joining B-Genius
-                  Academy. Our team will reach out to you within 24 hours to confirm your child's enrollment.</p>
+                <h3 class="font-heading font-black text-3xl mb-3" style="color: #0d2240" data-i18n="success_title">
+                  Registration Successful!
+                </h3>
+                <p class="text-gray-400 text-lg max-w-md mx-auto" data-i18n="success_sub">
+                  Thank you for joining B-Genius Academy. Our team will reach
+                  out to you within 24 hours to confirm your child's
+                  enrollment.
+                </p>
                 <a href="#programs" class="btn-primary mt-8 inline-flex" data-i18n="success_btn">Explore Programs</a>
               </div>
             </div>
-
           </form>
 
           <!-- Navigation buttons -->
           <div class="flex justify-between mt-8" id="form-nav">
             <button id="btn-prev" onclick="prevStep()"
               class="hidden px-6 py-3 rounded-full font-semibold text-sm transition-all hover:bg-gray-100"
-              style="border:1.5px solid #e0e8f0;color:#4a5568" data-i18n="btn_back">Back</button>
+              style="border: 1.5px solid #e0e8f0; color: #4a5568" data-i18n="btn_back">
+              Back
+            </button>
             <div></div>
-            <button id="btn-next" onclick="nextStep()" class="btn-primary py-3 px-8 text-sm"
-              data-i18n="btn_next">Continue</button>
+            <button id="btn-next" onclick="nextStep()" class="btn-primary py-3 px-8 text-sm" data-i18n="btn_next">
+              Continue
+            </button>
           </div>
         </div>
       </div>
@@ -718,19 +961,27 @@
   <!-- ══════════════════════════════════════════════════
      CTA SECTION
 ══════════════════════════════════════════════════ -->
-  <section class="relative py-28 overflow-hidden bg-pattern"
-    style="background:linear-gradient(135deg,#071428 0%,#0d2240 50%,#1a3d6e 100%)">
-    <div class="hero-orb w-96 h-96 top-[-4rem] right-[-6rem]" style="background:rgba(247,144,2,0.12)"></div>
-    <div class="hero-orb w-72 h-72 bottom-[-3rem] left-[-3rem]" style="background:rgba(34,111,180,0.15)"></div>
+  <section class="relative py-28 overflow-hidden bg-pattern" style="
+        background: linear-gradient(
+          135deg,
+          #071428 0%,
+          #0d2240 50%,
+          #1a3d6e 100%
+        );
+      ">
+    <div class="hero-orb w-96 h-96 top-[-4rem] right-[-6rem]" style="background: rgba(247, 144, 2, 0.12)"></div>
+    <div class="hero-orb w-72 h-72 bottom-[-3rem] left-[-3rem]" style="background: rgba(34, 111, 180, 0.15)"></div>
     <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
-      <div class="section-label mb-4" data-i18n="cta_label">✦ Take the First Step</div>
+      <div class="section-label mb-4" data-i18n="cta_label">
+        ✦ Take the First Step
+      </div>
       <h2 class="font-heading text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
         <span data-i18n="cta_h2a">Let's Build Their</span><br />
         <span class="grad-text" data-i18n="cta_h2b">Future Together.</span>
       </h2>
       <p class="text-white/60 text-xl mb-10 max-w-2xl mx-auto" data-i18n="cta_sub">
-        One free consultation. Infinite possibilities. Book today and discover which program is the perfect fit for your
-        child.
+        One free consultation. Infinite possibilities. Book today and discover
+        which program is the perfect fit for your child.
       </p>
       <div class="flex flex-wrap gap-4 justify-center">
         <a href="#contact" class="btn-primary text-lg px-10 py-4 animate-pulse-slow" data-i18n="cta_btn1">Book Free
@@ -738,22 +989,31 @@
         <a href="#programs" class="btn-outline text-lg px-10 py-4" data-i18n="cta_btn2">View All Programs</a>
       </div>
       <!-- Stats row -->
-      <div class="flex flex-wrap justify-center gap-12 mt-16 pt-12" style="border-top:1px solid rgba(255,255,255,0.08)">
+      <div class="flex flex-wrap justify-center gap-12 mt-16 pt-12"
+        style="border-top: 1px solid rgba(255, 255, 255, 0.08)">
         <div class="text-center">
           <div class="font-heading font-black text-5xl grad-text">500+</div>
-          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat1">Children Transformed</div>
+          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat1">
+            Children Transformed
+          </div>
         </div>
         <div class="text-center">
           <div class="font-heading font-black text-5xl grad-text">8</div>
-          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat2">Expert Programs</div>
+          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat2">
+            Expert Programs
+          </div>
         </div>
         <div class="text-center">
           <div class="font-heading font-black text-5xl grad-text">98%</div>
-          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat3">Parent Satisfaction</div>
+          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat3">
+            Parent Satisfaction
+          </div>
         </div>
         <div class="text-center">
           <div class="font-heading font-black text-5xl grad-text">10+</div>
-          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat4">Years of Excellence</div>
+          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat4">
+            Years of Excellence
+          </div>
         </div>
       </div>
     </div>
@@ -763,23 +1023,32 @@
      FOOTER
 ══════════════════════════════════════════════════ -->
   <footer id="footer" class="site-footer" aria-label="Site footer">
-
-    <!-- Wave top divider -->
-    <div style="line-height:0;overflow:hidden;margin-top:-2px">
-      <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;display:block">
-        <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#071428"/>
-      </svg>
-    </div>
-
     <!-- Decorative orbs (aria-hidden) replaced with solid decorative shapes -->
-    <div aria-hidden="true" class="hero-orb" style="width:500px;height:500px;top:-120px;left:-180px;background:rgba(247,144,2,.03)"></div>
-    <div aria-hidden="true" class="hero-orb" style="width:400px;height:400px;bottom:-80px;right:-120px;background:rgba(34,111,180,.04)"></div>
-    <div aria-hidden="true" class="hero-orb" style="width:200px;height:200px;top:40%;left:45%;background:rgba(255,255,255,.02)"></div>
+    <div aria-hidden="true" class="hero-orb" style="
+          width: 500px;
+          height: 500px;
+          top: -120px;
+          left: -180px;
+          background: rgba(247, 144, 2, 0.03);
+        "></div>
+    <div aria-hidden="true" class="hero-orb" style="
+          width: 400px;
+          height: 400px;
+          bottom: -80px;
+          right: -120px;
+          background: rgba(34, 111, 180, 0.04);
+        "></div>
+    <div aria-hidden="true" class="hero-orb" style="
+          width: 200px;
+          height: 200px;
+          top: 40%;
+          left: 45%;
+          background: rgba(255, 255, 255, 0.02);
+        "></div>
 
-    <div class="max-w-7xl mx-auto px-6" style="position:relative;z-index:2">
-
+    <div class="max-w-7xl mx-auto px-6" style="position: relative; z-index: 2">
       <!-- ─── Newsletter strip ─── -->
-      <div class="footer-newsletter reveal" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:2.2rem 2.5rem;margin-bottom:4rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.5rem;backdrop-filter:blur(16px)">
+      <!-- <div class="footer-newsletter reveal" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:3rem 3.5rem;margin-bottom:5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2.5rem;backdrop-filter:blur(16px)">
         <div>
           <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem">
             <i class="ph-duotone ph-paper-plane-tilt" style="color:#f79002;font-size:1.4rem"></i>
@@ -787,83 +1056,125 @@
           </div>
           <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin:0" data-i18n="footer_nl_sub">Get program updates, tips &amp; exclusive offers.</p>
         </div>
-        <div style="display:flex;gap:.75rem;flex-wrap:wrap;flex:1;min-width:260px;max-width:480px">
-          <input type="email" id="footer-email" placeholder="Your email address" aria-label="Email for newsletter"
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;flex:1;min-width:260px;max-width:480px">
+          <input type="email" id="footer-email" placeholder="Your email address" data-i18n-ph="footer_nl_ph" aria-label="Email for newsletter"
             style="flex:1;min-width:180px;padding:.85rem 1.2rem;border-radius:50px;border:1.5px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:#fff;font-family:inherit;font-size:.9rem;outline:none;transition:border-color .3s"
             onfocus="this.style.borderColor='#f79002'" onblur="this.style.borderColor='rgba(255,255,255,.15)'" />
           <button class="btn-primary" style="padding:.85rem 1.8rem;font-size:.9rem;white-space:nowrap" data-i18n="footer_nl_btn">Subscribe</button>
         </div>
-      </div>
+      </div> -->
 
       <!-- ─── Main columns ─── -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-10 mb-16">
-
+      <div class="grid md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-16 mb-20">
         <!-- Brand col (wider) -->
         <div class="lg:col-span-4 reveal">
           <!-- Logo -->
-          <div class="flex items-center gap-3 mb-5">
+          <div class="flex items-center gap-4 mb-6">
             <div class="relative">
               <div class="w-14 h-14 rounded-2xl flex items-center justify-center font-heading font-black text-2xl"
-                style="background:#f79002;box-shadow:0 8px 24px rgba(247,144,2,.2)">
-                <span style="color:#fff">B</span>
+                style="
+                    background: #f79002;
+                    box-shadow: 0 8px 24px rgba(247, 144, 2, 0.2);
+                  ">
+                <span style="color: #fff">B</span>
               </div>
-              <div class="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-xl flex items-center justify-center text-sm font-black"
-                style="background:#226fb4;color:#fff;box-shadow:0 4px 12px rgba(34,111,180,.2)">G</div>
+              <div
+                class="absolute -bottom-1.5 -right-1.5 w-7 h-7 rounded-xl flex items-center justify-center text-sm font-black"
+                style="
+                    background: #226fb4;
+                    color: #fff;
+                    box-shadow: 0 4px 12px rgba(34, 111, 180, 0.2);
+                  ">
+                G
+              </div>
             </div>
             <div>
-              <div class="font-heading font-black text-white" style="font-size:1.3rem;line-height:1" data-i18n="brand">B-Genius</div>
-              <div style="font-size:.75rem;font-weight:700;color:#f79002;letter-spacing:.1em" data-i18n="brand_sub">Academy</div>
+              <div class="font-heading font-black text-white" style="font-size: 1.4rem; line-height: 1"
+                data-i18n="brand">
+                B-Genius
+              </div>
+              <div style="
+                    font-size: 0.8rem;
+                    font-weight: 700;
+                    color: #f79002;
+                    letter-spacing: 0.1em;
+                    margin-top: 0.2rem;
+                  " data-i18n="brand_sub">
+                Academy
+              </div>
             </div>
           </div>
 
           <!-- Tagline -->
-          <p class="text-white/45 leading-relaxed mb-6" style="font-size:.9rem" data-i18n="footer_desc">
-            Empowering children &amp; teenagers to discover their potential through positive, interactive, and emotionally intelligent education.
+          <p class="text-white/45 leading-relaxed mb-8" style="font-size: 0.95rem" data-i18n="footer_desc">
+            Empowering children &amp; teenagers to discover their potential
+            through positive, interactive, and emotionally intelligent
+            education.
           </p>
 
           <!-- Mission badge -->
-          <div style="display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1.1rem;border-radius:50px;background:rgba(247,144,2,.1);border:1px solid rgba(247,144,2,.25);margin-bottom:1.5rem">
-            <i class="ph-duotone ph-shooting-star" style="color:#f79002;font-size:1rem"></i>
-            <span style="color:#f79002;font-size:.78rem;font-weight:800;letter-spacing:.1em">ACT TO IMPACT</span>
+          <div style="
+                display: inline-flex;
+                align-items: center;
+                gap: 0.6rem;
+                padding: 0.6rem 1.2rem;
+                border-radius: 50px;
+                background: rgba(247, 144, 2, 0.1);
+                border: 1px solid rgba(247, 144, 2, 0.25);
+                margin-bottom: 2rem;
+              ">
+            <i class="ph-duotone ph-shooting-star" style="color: #f79002; font-size: 1.1rem"></i>
+            <span style="
+                  color: #f79002;
+                  font-size: 0.8rem;
+                  font-weight: 800;
+                  letter-spacing: 0.1em;
+                ">ACT TO IMPACT</span>
           </div>
 
           <!-- Social row -->
-          <div style="display:flex;gap:.75rem;flex-wrap:wrap">
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap">
             <a href="#" class="footer-social" aria-label="Instagram">
               <i class="ph-duotone ph-instagram-logo"></i>
-              <span>Instagram</span>
+              <span data-i18n="footer_social_insta">Instagram</span>
             </a>
             <a href="#" class="footer-social" aria-label="WhatsApp">
               <i class="ph-duotone ph-whatsapp-logo"></i>
-              <span>WhatsApp</span>
+              <span data-i18n="footer_social_wa">WhatsApp</span>
             </a>
             <a href="#" class="footer-social" aria-label="Twitter / X">
               <i class="ph-duotone ph-x-logo"></i>
-              <span>X</span>
+              <span data-i18n="footer_social_x">X</span>
             </a>
             <a href="#" class="footer-social" aria-label="TikTok">
               <i class="ph-duotone ph-tiktok-logo"></i>
-              <span>TikTok</span>
+              <span data-i18n="footer_social_tiktok">TikTok</span>
             </a>
           </div>
         </div>
 
         <!-- Quick Links -->
         <div class="lg:col-span-2 reveal">
-          <div class="footer-col-heading" data-i18n="footer_links">Quick Links</div>
+          <div class="footer-col-heading" data-i18n="footer_links">
+            Quick Links
+          </div>
           <ul class="footer-link-list">
             <li><a href="#" data-i18n="nav_home">Home</a></li>
             <li><a href="#about" data-i18n="nav_about">About</a></li>
             <li><a href="#programs" data-i18n="nav_programs">Programs</a></li>
             <li><a href="#pricing" data-i18n="nav_packages">Packages</a></li>
-            <li><a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a></li>
+            <li>
+              <a href="#testimonials" data-i18n="nav_testimonials">Testimonials</a>
+            </li>
             <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
           </ul>
         </div>
 
         <!-- Programs -->
         <div class="lg:col-span-3 reveal">
-          <div class="footer-col-heading" data-i18n="nav_programs">Programs</div>
+          <div class="footer-col-heading" data-i18n="nav_programs">
+            Programs
+          </div>
           <ul class="footer-link-list" id="footer-programs">
             <!-- Injected by JS -->
           </ul>
@@ -871,7 +1182,9 @@
 
         <!-- Contact -->
         <div class="lg:col-span-3 reveal">
-          <div class="footer-col-heading" data-i18n="nav_contact">Contact</div>
+          <div class="footer-col-heading" data-i18n="nav_contact">
+            Contact
+          </div>
           <ul class="footer-contact-list">
             <li>
               <span class="footer-contact-icon"><i class="ph-duotone ph-map-pin"></i></span>
@@ -892,44 +1205,99 @@
           </ul>
 
           <!-- CTA card -->
-          <div style="margin-top:1.5rem;padding:1.2rem 1.4rem;border-radius:16px;background:rgba(34,111,180,.1);border:1px solid rgba(34,111,180,.2)">
-            <div style="font-size:.78rem;color:rgba(255,255,255,.6);margin-bottom:.5rem" data-i18n="footer_cta_label">Ready to start?</div>
-            <a href="#contact" class="btn-primary" style="font-size:.85rem;padding:.7rem 1.4rem;width:100%;justify-content:center" data-i18n="nav_cta">Book Free Session</a>
+          <div style="
+                margin-top: 1.5rem;
+                padding: 1.2rem 1.4rem;
+                border-radius: 16px;
+                background: rgba(34, 111, 180, 0.1);
+                border: 1px solid rgba(34, 111, 180, 0.2);
+              ">
+            <div style="
+                  font-size: 0.78rem;
+                  color: rgba(255, 255, 255, 0.6);
+                  margin-bottom: 0.5rem;
+                " data-i18n="footer_cta_label">
+              Ready to start? &nbsp;
+            </div>
+            <a href="#contact" class="btn-primary" style="
+                  font-size: 0.85rem;
+                  padding: 0.7rem 1.4rem;
+                  width: 100%;
+                  justify-content: center;
+                " data-i18n="nav_cta">Book Free Session</a>
           </div>
         </div>
-
       </div>
 
       <!-- ─── Divider with stats ─── -->
-      <div style="display:flex;flex-wrap:wrap;justify-content:space-around;gap:1rem;padding:2rem 0;border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:2rem">
+      <div style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            margin-bottom: 3rem;
+          ">
         <div class="footer-stat">
           <div class="footer-stat-num">500+</div>
-          <div class="footer-stat-label" data-i18n="cta_stat1">Children Transformed</div>
+          <div class="footer-stat-label" data-i18n="cta_stat1">
+            Children Transformed
+          </div>
         </div>
         <div class="footer-stat">
           <div class="footer-stat-num">8</div>
-          <div class="footer-stat-label" data-i18n="cta_stat2">Expert Programs</div>
+          <div class="footer-stat-label" data-i18n="cta_stat2">
+            Expert Programs
+          </div>
         </div>
         <div class="footer-stat">
           <div class="footer-stat-num">98%</div>
-          <div class="footer-stat-label" data-i18n="cta_stat3">Parent Satisfaction</div>
+          <div class="footer-stat-label" data-i18n="cta_stat3">
+            Parent Satisfaction
+          </div>
         </div>
         <div class="footer-stat">
           <div class="footer-stat-num">10+</div>
-          <div class="footer-stat-label" data-i18n="cta_stat4">Years of Excellence</div>
+          <div class="footer-stat-label" data-i18n="cta_stat4">
+            Years of Excellence
+          </div>
         </div>
       </div>
 
       <!-- ─── Bottom bar ─── -->
-      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;padding-bottom:2.5rem">
-        <div style="color:rgba(255,255,255,.3);font-size:.78rem" data-i18n="footer_copy">&copy; 2025 B-Genius Academy. All rights reserved.</div>
-        <div style="display:flex;gap:1.5rem;flex-wrap:wrap">
-          <a href="#" style="color:rgba(255,255,255,.3);font-size:.78rem;text-decoration:none;transition:color .3s" onmouseover="this.style.color='#f79002'" onmouseout="this.style.color='rgba(255,255,255,.3)'">Privacy Policy</a>
-          <a href="#" style="color:rgba(255,255,255,.3);font-size:.78rem;text-decoration:none;transition:color .3s" onmouseover="this.style.color='#f79002'" onmouseout="this.style.color='rgba(255,255,255,.3)'">Terms of Service</a>
+      <div style="
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            padding-bottom: 3rem;
+          ">
+        <div style="color: rgba(255, 255, 255, 0.3); font-size: 0.85rem" data-i18n="footer_copy">
+          &copy; 2025 B-Genius Academy. All rights reserved.
         </div>
-        <div style="color:rgba(255,255,255,.25);font-size:.78rem" data-i18n="footer_slogan">Act to Impact &mdash; Building Tomorrow's Leaders Today</div>
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap">
+          <a href="#" style="
+                color: rgba(255, 255, 255, 0.3);
+                font-size: 0.85rem;
+                text-decoration: none;
+                transition: color 0.3s;
+              " onmouseover="this.style.color = '#f79002'" onmouseout="this.style.color = 'rgba(255,255,255,.3)'"
+            data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="#" style="
+                color: rgba(255, 255, 255, 0.3);
+                font-size: 0.85rem;
+                text-decoration: none;
+                transition: color 0.3s;
+              " onmouseover="this.style.color = '#f79002'" onmouseout="this.style.color = 'rgba(255,255,255,.3)'"
+            data-i18n="footer_terms">Terms of Service</a>
+        </div>
+        <div style="color: rgba(255, 255, 255, 0.25); font-size: 0.85rem" data-i18n="footer_slogan">
+          Act to Impact &mdash; Building Tomorrow's Leaders Today
+        </div>
       </div>
-
     </div>
   </footer>
 
