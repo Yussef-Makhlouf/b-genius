@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="html-root">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#071428" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="supported-color-schemes" content="dark light" />
+  <title>B-Genius Academy – Act to Impact</title>
+  <meta name="description"
+    content="B-Genius Academy: Interactive programs helping children and teens build confidence, emotional intelligence, creativity, and life skills." />
+  <meta name="keywords"
+    content="B-Genius Academy, children programs, confidence building, emotional intelligence, creativity, life skills, Kuwait" />
+  <meta name="author" content="B-Genius Academy" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=Outfit:wght@300;400;500;600;700&family=Cairo:wght@400;600;700;800&family=Tajawal:wght@300;400;500;700&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            orange: { DEFAULT: '#f79002', dark: '#d97800', light: '#ffb340', glow: 'rgba(247,144,2,0.25)' },
+            navy: { DEFAULT: '#226fb4', dark: '#0d2240', darker: '#071428', mid: '#1a5490' },
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group" aria-label="B-Genius Academy home">
+        <div class="relative">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center font-heading font-black text-xl"
+            style="background:linear-gradient(135deg,#f79002,#ffb340);">
+            <span style="color:#fff">B</span>
+          </div>
+          <div
+            class="absolute -bottom-1 -right-1 w-5 h-5 rounded-lg flex items-center justify-center text-xs font-black"
+            style="background:#226fb4;color:#fff;">G</div>
+        </div>
+        <div class="ltr:ml-1 rtl:mr-1">
+          <div class="font-heading font-black text-white text-lg leading-none tracking-tight" data-i18n="brand">B-Genius
+          </div>
+          <div class="text-xs font-medium" style="color:#f79002;letter-spacing:.06em" data-i18n="brand_sub">Academy
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="hidden lg:flex items-center gap-8" role="menubar">
+        <a href="#about" class="text-white/70 hover:text-orange-DEFAULT text-sm font-semibold transition-colors"
+          style="--tw-text-opacity:1" role="menuitem" data-i18n="nav_about">About</a>
+        <a href="#programs" class="text-white/70 hover:text-white text-sm font-semibold transition-colors"
+          role="menuitem" data-i18n="nav_programs">Programs</a>
+        <a href="#pricing" class="text-white/70 hover:text-white text-sm font-semibold transition-colors"
+          role="menuitem" data-i18n="nav_packages">Packages</a>
+        <a href="#testimonials" class="text-white/70 hover:text-white text-sm font-semibold transition-colors"
+          role="menuitem" data-i18n="nav_testimonials">Testimonials</a>
+        <a href="#contact" class="text-white/70 hover:text-white text-sm font-semibold transition-colors"
+          role="menuitem" data-i18n="nav_contact">Contact</a>
+      </div>
+
+      <!-- Actions -->
+      <div class="hidden lg:flex items-center gap-3">
+        <!-- Lang Switcher -->
+        <div class="flex items-center gap-1 bg-white/10 rounded-full p-1">
+          <button onclick="setLang('en')" id="btn-en" class="lang-btn active">EN</button>
+          <button onclick="setLang('ar')" id="btn-ar" class="lang-btn inactive">عر</button>
+        </div>
+        <a href="#contact" class="btn-primary text-sm py-2.5 px-5" data-i18n="nav_cta">Book Free Session</a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button id="menu-toggle" class="lg:hidden text-white p-2" onclick="toggleMenu()" aria-expanded="false"
+        aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+        <svg id="menu-icon" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" role="navigation" aria-label="Mobile Navigation" hidden>
+    <button onclick="toggleMenu()" class="absolute top-6 right-6 text-white/70 hover:text-white p-2"
+      aria-label="Close navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        aria-hidden="true">
+        <line x1="4" y1="4" x2="24" y2="24" />
+        <line x1="24" y1="4" x2="4" y2="24" />
+      </svg>
+    </button>
+    <div class="flex flex-col gap-6 text-center" role="menubar">
+      <a href="#about" onclick="toggleMenu()" class="text-white text-2xl font-heading font-bold" role="menuitem"
+        data-i18n-m="nav_about">About</a>
+      <a href="#programs" onclick="toggleMenu()" class="text-white text-2xl font-heading font-bold" role="menuitem"
+        data-i18n-m="nav_programs">Programs</a>
+      <a href="#pricing" onclick="toggleMenu()" class="text-white text-2xl font-heading font-bold" role="menuitem"
+        data-i18n-m="nav_packages">Packages</a>
+      <a href="#testimonials" onclick="toggleMenu()" class="text-white text-2xl font-heading font-bold" role="menuitem"
+        data-i18n-m="nav_testimonials">Testimonials</a>
+      <a href="#contact" onclick="toggleMenu()" class="text-white text-2xl font-heading font-bold" role="menuitem"
+        data-i18n-m="nav_contact">Contact</a>
+      <div class="flex items-center justify-center gap-2 mt-4">
+        <button onclick="setLang('en');toggleMenu()" class="lang-btn active" id="m-btn-en">EN</button>
+        <button onclick="setLang('ar');toggleMenu()" class="lang-btn inactive" id="m-btn-ar">عر</button>
+      </div>
+      <a href="#contact" onclick="toggleMenu()" class="btn-primary mx-auto mt-2" data-i18n-m="nav_cta">Book Free
+        Session</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════
+     HERO SECTION
+══════════════════════════════════════════════════ -->
+  <section id="hero" class="bg-pattern">
+    <!-- Orbs -->
+    <div class="hero-orb w-96 h-96 top-[-6rem] right-[-4rem]" style="background:rgba(247,144,2,.18)"></div>
+    <div class="hero-orb w-72 h-72 bottom-[5rem] left-[-3rem]" style="background:rgba(34,111,180,.2)"></div>
+    <div class="hero-orb w-48 h-48 top-1/2 left-1/3" style="background:rgba(247,144,2,.1)"></div>
+
+    <!-- Decorative ring -->
+    <div class="absolute top-24 right-16 w-64 h-64 opacity-10 animate-spin-slow hidden lg:block"
+      style="border:2px dashed #f79002;border-radius:50%"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 pt-36 pb-24 lg:pt-44 lg:pb-32">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- LEFT: Copy -->
+        <div class="reveal-left">
+          <div class="section-label" data-i18n="hero_label">✦ Act to Impact</div>
+          <h1
+            class="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.08] mb-6 tracking-tight">
+            <span data-i18n="hero_h1a">Where Potential</span><br />
+            <span class="grad-text" data-i18n="hero_h1b">Becomes Purpose.</span>
+          </h1>
+          <p class="text-white/65 text-lg leading-relaxed mb-8 max-w-lg" data-i18n="hero_sub">
+            Interactive programs that help children and teenagers build confidence, emotional intelligence, creativity,
+            communication, and life skills.
+          </p>
+
+          <div class="flex flex-wrap gap-3 mb-10">
+            <a href="#programs" class="btn-primary" data-i18n="hero_cta1">Explore Programs</a>
+            <a href="#contact" class="btn-outline" data-i18n="hero_cta2">Book Free Session</a>
+          </div>
+
+          <!-- Trust badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 stagger">
+            <div class="glass-card reveal p-3 text-center">
+              <div class="text-2xl mb-1">🌱</div>
+              <div class="text-white text-xs font-semibold" data-i18n="badge1">Positive Learning</div>
+            </div>
+            <div class="glass-card reveal p-3 text-center">
+              <div class="text-2xl mb-1">🏅</div>
+              <div class="text-white text-xs font-semibold" data-i18n="badge2">Certified Trainers</div>
+            </div>
+            <div class="glass-card reveal p-3 text-center">
+              <div class="text-2xl mb-1">🎨</div>
+              <div class="text-white text-xs font-semibold" data-i18n="badge3">Interactive Activities</div>
+            </div>
+            <div class="glass-card reveal p-3 text-center">
+              <div class="text-2xl mb-1">👨‍👩‍👧</div>
+              <div class="text-white text-xs font-semibold" data-i18n="badge4">Family-Focused</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Visual -->
+        <div class="relative reveal-right hidden lg:block">
+          <!-- Main visual card -->
+          <div class="relative mx-auto" style="max-width:420px">
+            <!-- Abstract student illustration -->
+            <div class="relative rounded-3xl overflow-hidden"
+              style="background:linear-gradient(145deg,#1a5490,#226fb4,#f79002);padding:3px">
+              <div class="rounded-3xl overflow-hidden"
+                style="background:linear-gradient(160deg,#0d2a4a,#1a3d6e);min-height:420px;display:flex;align-items:center;justify-content:center">
+                <svg viewBox="0 0 380 400" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Background elements -->
+                  <circle cx="190" cy="200" r="140" fill="rgba(34,111,180,0.15)" />
+                  <circle cx="190" cy="200" r="100" fill="rgba(34,111,180,0.12)" />
+                  <!-- Student silhouette -->
+                  <circle cx="190" cy="130" r="55" fill="rgba(247,144,2,0.85)" />
+                  <path d="M100 310 Q190 245 280 310 L285 380 H95 Z" fill="rgba(34,111,180,0.9)" />
+                  <!-- Book -->
+                  <rect x="145" y="250" width="90" height="65" rx="5" fill="rgba(255,255,255,0.15)" />
+                  <line x1="190" y1="250" x2="190" y2="315" stroke="rgba(255,255,255,0.3)" stroke-width="2" />
+                  <!-- Stars -->
+                  <text x="130" y="100" font-size="20" fill="#f79002" opacity="0.8">★</text>
+                  <text x="230" y="80" font-size="14" fill="#f79002" opacity="0.6">★</text>
+                  <text x="260" y="170" font-size="16" fill="#ffce6a" opacity="0.5">★</text>
+                  <!-- Light rays -->
+                  <line x1="190" y1="20" x2="190" y2="50" stroke="#f79002" stroke-width="2" opacity="0.3" />
+                  <line x1="310" y1="90" x2="295" y2="110" stroke="#f79002" stroke-width="2" opacity="0.25" />
+                  <line x1="70" y1="90" x2="85" y2="110" stroke="#f79002" stroke-width="2" opacity="0.25" />
+                  <!-- Text -->
+                  <text x="190" y="370" text-anchor="middle" font-family="Syne,sans-serif" font-weight="800"
+                    font-size="13" fill="rgba(255,255,255,0.5)" letter-spacing="3">B-GENIUS</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Floating stat cards -->
+            <div class="glass-card absolute -top-6 -left-10 p-4 animate-float" style="min-width:140px">
+              <div class="text-3xl font-black font-heading" style="color:#f79002">500+</div>
+              <div class="text-white/70 text-xs font-medium mt-0.5" data-i18n="stat1">Students Transformed</div>
+            </div>
+            <div class="glass-card absolute -bottom-4 -right-8 p-4 animate-float-2" style="min-width:150px">
+              <div class="text-3xl font-black font-heading" style="color:#f79002">8</div>
+              <div class="text-white/70 text-xs font-medium mt-0.5" data-i18n="stat2">Specialized Programs</div>
+            </div>
+            <div class="glass-card absolute top-1/2 -right-12 p-3 animate-float-3">
+              <div class="flex items-center gap-2">
+                <span class="text-2xl">⭐</span>
+                <div>
+                  <div class="text-white font-black text-lg font-heading">4.9</div>
+                  <div class="text-white/60 text-xs" data-i18n="stat3">Parent Rating</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Curve -->
+    <div class="curve-bottom">
+      <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0,60 Q360,0 720,40 Q1080,80 1440,20 L1440,60 Z" fill="#f8f9fc" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+     ABOUT SECTION
+══════════════════════════════════════════════════ -->
+  <section id="about" class="section-pad bg-pattern-light" style="background-color:#f8f9fc">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left: Visual collage -->
+        <div class="relative reveal-left">
+          <div class="relative">
+            <!-- Main image placeholder -->
+            <div class="rounded-3xl overflow-hidden h-96" style="background:linear-gradient(145deg,#226fb4,#0d2240)">
+              <svg viewBox="0 0 500 380" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                <!-- Grid of student icons -->
+                <rect width="500" height="380" fill="#0d2240" />
+                <!-- Circles pattern -->
+                <circle cx="100" cy="100" r="60" fill="rgba(247,144,2,0.15)" />
+                <circle cx="400" cy="280" r="80" fill="rgba(34,111,180,0.2)" />
+                <!-- Illustration -->
+                <g transform="translate(100,60)">
+                  <circle cx="60" cy="40" r="30" fill="#f79002" opacity="0.8" />
+                  <path d="M20 120 Q60 90 100 120" fill="#226fb4" opacity="0.8" />
+                </g>
+                <g transform="translate(270,80)">
+                  <circle cx="60" cy="40" r="30" fill="#226fb4" opacity="0.8" />
+                  <path d="M20 120 Q60 90 100 120" fill="#f79002" opacity="0.6" />
+                </g>
+                <g transform="translate(170,180)">
+                  <circle cx="60" cy="40" r="35" fill="rgba(255,255,255,0.12)" />
+                  <circle cx="60" cy="40" r="25" fill="rgba(247,144,2,0.6)" />
+                </g>
+                <!-- Text overlay -->
+                <text x="250" y="340" text-anchor="middle" font-family="Syne,sans-serif" font-weight="900"
+                  font-size="22" fill="rgba(255,255,255,0.08)" letter-spacing="8">B-GENIUS ACADEMY</text>
+              </svg>
+            </div>
+
+            <!-- Floating achievement cards -->
+            <div class="absolute -bottom-8 -right-6 glass-card animate-float"
+              style="background:linear-gradient(135deg,#226fb4,#1a5490);padding:1.2rem;max-width:200px">
+              <div class="text-3xl font-black font-heading text-white">10+</div>
+              <div class="text-white/70 text-sm" data-i18n="about_years">Years of Experience</div>
+            </div>
+            <div class="absolute -top-6 -left-6 glass-card animate-float-2"
+              style="background:#fff;padding:1.2rem;max-width:180px;box-shadow:0 10px 40px rgba(34,111,180,0.18)">
+              <div class="text-2xl mb-1">🏆</div>
+              <div class="font-heading font-bold text-navy-dark text-sm" style="color:#0d2240" data-i18n="about_award">
+                Award-Winning Programs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div class="reveal-right">
+          <div class="section-label" data-i18n="about_label">✦ Who We Are</div>
+          <h2 class="font-heading text-4xl lg:text-5xl font-black text-navy-dark leading-tight mb-6"
+            style="color:#0d2240">
+            <span data-i18n="about_h2a">Building Tomorrow's</span><br />
+            <span class="grad-text" data-i18n="about_h2b">Leaders, Today.</span>
+          </h2>
+          <p class="text-gray-500 text-lg leading-relaxed mb-8" data-i18n="about_desc">
+            At B-Genius Academy, we believe in understanding before guiding. Our approach combines positive education,
+            interactive learning, and emotional development to help every child discover their unique potential.
+          </p>
+
+          <!-- Values grid -->
+          <div class="grid grid-cols-2 gap-4 stagger">
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
+              style="background:rgba(247,144,2,0.06);border:1px solid rgba(247,144,2,0.15)">
+              <span class="text-2xl">🧠</span>
+              <div>
+                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val1_t">Positive Education
+                </div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val1_d">Strength-based approach</div>
+              </div>
+            </div>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
+              style="background:rgba(34,111,180,0.06);border:1px solid rgba(34,111,180,0.12)">
+              <span class="text-2xl">❤️</span>
+              <div>
+                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val2_t">Emotional Growth
+                </div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val2_d">EQ development focus</div>
+              </div>
+            </div>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
+              style="background:rgba(34,111,180,0.06);border:1px solid rgba(34,111,180,0.12)">
+              <span class="text-2xl">🎯</span>
+              <div>
+                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val3_t">Confidence Building
+                </div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val3_d">Empowering every child</div>
+              </div>
+            </div>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
+              style="background:rgba(247,144,2,0.06);border:1px solid rgba(247,144,2,0.15)">
+              <span class="text-2xl">👨‍👩‍👧‍👦</span>
+              <div>
+                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val4_t">Family Partnership
+                </div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val4_d">Parents as co-creators</div>
+              </div>
+            </div>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
+              style="background:rgba(247,144,2,0.06);border:1px solid rgba(247,144,2,0.15)">
+              <span class="text-2xl">🎨</span>
+              <div>
+                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val5_t">Interactive
+                  Learning</div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val5_d">Hands-on activities</div>
+              </div>
+            </div>
+            <div class="reveal flex items-start gap-3 p-4 rounded-2xl"
+              style="background:rgba(34,111,180,0.06);border:1px solid rgba(34,111,180,0.12)">
+              <span class="text-2xl">🌟</span>
+              <div>
+                <div class="font-heading font-bold text-sm" style="color:#0d2240" data-i18n="val6_t">Creative Expression
+                </div>
+                <div class="text-xs text-gray-400 mt-0.5" data-i18n="val6_d">Arts & communication</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+     PROGRAMS SECTION
+══════════════════════════════════════════════════ -->
+  <section id="programs" class="section-pad" style="background:#0d2240">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="section-label" data-i18n="prog_label">✦ Our Programs</div>
+        <h2 class="font-heading text-4xl lg:text-5xl font-black text-white leading-tight mt-3">
+          <span data-i18n="prog_h2a">Programs Designed for</span><br />
+          <span class="grad-text" data-i18n="prog_h2b">Every Stage of Growth</span>
+        </h2>
+        <p class="text-white/55 mt-4 text-lg max-w-2xl mx-auto" data-i18n="prog_sub">
+          Eight specialized programs crafted by child development experts to nurture the whole child — mind, heart, and
+          character.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 stagger" id="programs-grid">
+        <!-- Cards injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+     PRICING SECTION
+══════════════════════════════════════════════════ -->
+  <section id="pricing" class="section-pad bg-pattern" style="background-color:#f8f9fc">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <div class="section-label" data-i18n="price_label">✦ Investment Plans</div>
+        <h2 class="font-heading text-4xl lg:text-5xl font-black leading-tight mt-3" style="color:#0d2240">
+          <span data-i18n="price_h2a">Choose Your</span><br />
+          <span class="grad-text" data-i18n="price_h2b">Growth Journey</span>
+        </h2>
+        <p class="text-gray-400 mt-4 text-lg max-w-xl mx-auto" data-i18n="price_sub">
+          Flexible packages designed to fit every family's needs and goals.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 stagger" id="pricing-grid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+     TESTIMONIALS SECTION
+══════════════════════════════════════════════════ -->
+  <section id="testimonials" class="section-pad" style="background:#071428">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-14 reveal">
+        <div class="section-label" data-i18n="test_label">✦ Success Stories</div>
+        <h2 class="font-heading text-4xl lg:text-5xl font-black text-white mt-3">
+          <span data-i18n="test_h2a">Families Who</span>
+          <span class="grad-text" data-i18n="test_h2b"> Transformed</span>
+        </h2>
+      </div>
+
+      <div class="relative overflow-hidden reveal">
+        <!-- Carousel -->
+        <div class="overflow-hidden">
+          <div class="testimonial-track" id="test-track">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+        <!-- Controls -->
+        <div class="flex items-center justify-center gap-4 mt-8">
+          <button onclick="prevSlide()"
+            class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110"
+            style="background:rgba(255,255,255,0.1);color:#fff">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="13,5 7,10 13,15" />
+            </svg>
+          </button>
+          <div class="flex gap-2" id="test-dots"></div>
+          <button onclick="nextSlide()"
+            class="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110"
+            style="background:rgba(255,255,255,0.1);color:#fff">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="7,5 13,10 7,15" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+     REGISTRATION / CONTACT FORM
+══════════════════════════════════════════════════ -->
+  <section id="contact" class="section-pad bg-pattern" style="background-color:#f0f5fb">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12 reveal">
+        <div class="section-label" data-i18n="form_label">✦ Join Us</div>
+        <h2 class="font-heading text-4xl lg:text-5xl font-black leading-tight mt-3" style="color:#0d2240">
+          <span data-i18n="form_h2a">Register Your</span>
+          <span class="grad-text" data-i18n="form_h2b"> Child Today</span>
+        </h2>
+        <p class="text-gray-400 mt-4 text-lg" data-i18n="form_sub">Complete the form below and our team will contact you
+          within 24 hours.</p>
+      </div>
+
+      <div class="reveal"
+        style="background:#fff;border-radius:32px;box-shadow:0 20px 80px rgba(34,111,180,0.15);overflow:hidden">
+        <!-- Progress indicator -->
+        <div style="background:linear-gradient(135deg,#0d2240,#226fb4);padding:2rem">
+          <div class="flex items-center justify-center gap-0" id="progress-bar">
+            <!-- Injected by JS -->
+          </div>
+          <div class="text-center mt-4">
+            <div class="text-white font-heading font-bold text-lg" id="step-title" data-i18n="step1_title">Student
+              Information</div>
+            <div class="text-white/50 text-sm mt-1" id="step-subtitle" data-i18n="step1_sub">Step 1 of 4</div>
+          </div>
+        </div>
+
+        <!-- Form body -->
+        <div style="padding:2.5rem">
+          <form id="reg-form" onsubmit="return false;">
+
+            <!-- STEP 1: Student Info -->
+            <div class="step-panel active" id="step-1">
+              <div class="grid md:grid-cols-2 gap-5">
+                <div class="md:col-span-2">
+                  <label class="form-label" for="fullname" data-i18n="f_fullname">Full Name</label>
+                  <input type="text" class="form-input" id="fullname" name="fullname" placeholder="Student's full name"
+                    data-i18n-ph="ph_fullname" required />
+                </div>
+                <div>
+                  <label class="form-label" for="gender" data-i18n="f_gender">Gender</label>
+                  <select class="form-select" id="gender" name="gender" required>
+                    <option value="" data-i18n="sel_gender">Select gender</option>
+                    <option value="male" data-i18n="opt_male">Male</option>
+                    <option value="female" data-i18n="opt_female">Female</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="dob" data-i18n="f_dob">Date of Birth</label>
+                  <input type="date" class="form-input" id="dob" name="dob" required />
+                </div>
+                <div>
+                  <label class="form-label" for="age" data-i18n="f_age">Age</label>
+                  <input type="number" class="form-input" id="age" name="age" min="3" max="18" placeholder="Age"
+                    data-i18n-ph="ph_age" required />
+                </div>
+                <div>
+                  <label class="form-label" for="nationality" data-i18n="f_nationality">Nationality</label>
+                  <input type="text" class="form-input" id="nationality" name="nationality" placeholder="e.g. Kuwaiti"
+                    data-i18n-ph="ph_nationality" />
+                </div>
+                <div>
+                  <label class="form-label" for="stage" data-i18n="f_stage">School Stage</label>
+                  <select class="form-select" id="stage" name="stage" required>
+                    <option value="" data-i18n="sel_stage">Select stage</option>
+                    <option value="kindergarten" data-i18n="opt_kinder">Kindergarten</option>
+                    <option value="primary" data-i18n="opt_primary">Primary</option>
+                    <option value="middle" data-i18n="opt_middle">Middle School</option>
+                    <option value="high" data-i18n="opt_high">High School</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="civil" data-i18n="f_civil">Civil ID</label>
+                  <input type="text" class="form-input" id="civil" name="civil" placeholder="Civil ID number"
+                    data-i18n-ph="ph_civil" />
+                </div>
+                <div class="md:col-span-2">
+                  <label class="form-label" for="medical" data-i18n="f_medical">Medical Conditions (if any)</label>
+                  <textarea class="form-input" id="medical" name="medical" rows="3"
+                    placeholder="Describe any relevant medical conditions..." data-i18n-ph="ph_medical"
+                    style="resize:vertical" aria-describedby="medical-help"></textarea>
+                  <div id="medical-help" class="text-xs text-gray-400 mt-1">Optional: This helps us provide better
+                    support if needed.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2: Parent Info -->
+            <div class="step-panel" id="step-2">
+              <div class="grid md:grid-cols-2 gap-5">
+                <div class="md:col-span-2">
+                  <label class="form-label" data-i18n="f_parentname">Parent / Guardian Name</label>
+                  <input type="text" class="form-input" id="parentname" placeholder="Full name"
+                    data-i18n-ph="ph_parentname" />
+                </div>
+                <div>
+                  <label class="form-label" data-i18n="f_relation">Relationship to Student</label>
+                  <select class="form-select" id="relation">
+                    <option value="" data-i18n="sel_relation">Select relationship</option>
+                    <option value="father" data-i18n="opt_father">Father</option>
+                    <option value="mother" data-i18n="opt_mother">Mother</option>
+                    <option value="guardian" data-i18n="opt_guardian">Guardian</option>
+                    <option value="other" data-i18n="opt_other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" data-i18n="f_phone1">Primary Phone</label>
+                  <input type="tel" class="form-input" id="phone1" placeholder="+965 XXXX XXXX"
+                    data-i18n-ph="ph_phone" />
+                </div>
+                <div>
+                  <label class="form-label" for="phone2" data-i18n="f_phone2">Secondary Phone</label>
+                  <input type="tel" class="form-input" id="phone2" name="phone2" placeholder="+965 XXXX XXXX"
+                    data-i18n-ph="ph_phone" />
+                </div>
+                <div>
+                  <label class="form-label" for="email" data-i18n="f_email">Email Address</label>
+                  <input type="email" class="form-input" id="email" name="email" placeholder="email@example.com"
+                    data-i18n-ph="ph_email" required />
+                </div>
+                <div class="md:col-span-2">
+                  <label class="form-label" for="address" data-i18n="f_address">Home Address</label>
+                  <input type="text" class="form-input" id="address" name="address" placeholder="Area / Block / Street"
+                    data-i18n-ph="ph_address" />
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3: Program Details -->
+            <div class="step-panel" id="step-3">
+              <div class="grid md:grid-cols-2 gap-5">
+                <div class="md:col-span-2">
+                  <label class="form-label" for="program" data-i18n="f_program">Program Name</label>
+                  <select class="form-select" id="program" name="program" required>
+                    <option value="" data-i18n="sel_program">Select a program</option>
+                    <option value="mindful" data-i18n="p1">Mindful Program</option>
+                    <option value="creative" data-i18n="p2">Creative Voices Hub</option>
+                    <option value="behavior" data-i18n="p3">Genius Behavior Heroes</option>
+                    <option value="heartart" data-i18n="p4">Genius Heart &amp; Art</option>
+                    <option value="mindlab" data-i18n="p5">Be Genius Mindfulness Lab</option>
+                    <option value="leaders" data-i18n="p6">Little Life Leaders</option>
+                    <option value="parenting" data-i18n="p7">Positive Parenting Sessions</option>
+                    <option value="riseshine" data-i18n="p8">Rise &amp; Shine Club</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="subtype" data-i18n="f_subtype">Subscription Type</label>
+                  <select class="form-select" id="subtype" name="subtype" required>
+                    <option value="" data-i18n="sel_sub">Select type</option>
+                    <option value="starter" data-i18n="sub_starter">Starter</option>
+                    <option value="growth" data-i18n="sub_growth">Growth (Most Popular)</option>
+                    <option value="impact" data-i18n="sub_impact">Impact</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="duration" data-i18n="f_duration">Program Duration</label>
+                  <select class="form-select" id="duration" name="duration" required>
+                    <option value="" data-i18n="sel_dur">Select duration</option>
+                    <option value="1month" data-i18n="dur_1">1 Month</option>
+                    <option value="3months" data-i18n="dur_3">3 Months</option>
+                    <option value="6months" data-i18n="dur_6">6 Months</option>
+                    <option value="1year" data-i18n="dur_12">1 Year</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="form-label" for="days-checkboxes" data-i18n="f_days">Attendance Days</label>
+                  <div class="flex flex-wrap gap-2 mt-1" id="days-checkboxes" role="group" aria-labelledby="days-label">
+                    <!-- Injected by JS -->
+                  </div>
+                </div>
+                <div>
+                  <label class="form-label" for="pref-time" data-i18n="f_time">Preferred Time</label>
+                  <select class="form-select" id="pref-time" name="pref_time" required>
+                    <option value="" data-i18n="sel_time">Select time slot</option>
+                    <option value="morning" data-i18n="time_m">Morning (9AM – 12PM)</option>
+                    <option value="afternoon" data-i18n="time_a">Afternoon (1PM – 4PM)</option>
+                    <option value="evening" data-i18n="time_e">Evening (5PM – 8PM)</option>
+                  </select>
+                </div>
+                <div class="md:col-span-2">
+                  <label class="form-label" for="notes" data-i18n="f_notes">Additional Notes</label>
+                  <textarea class="form-input" id="notes" name="notes" rows="3"
+                    placeholder="Any special requests or notes..." data-i18n-ph="ph_notes" style="resize:vertical"
+                    aria-describedby="notes-help"></textarea>
+                  <div id="notes-help" class="text-xs text-gray-400 mt-1">Optional: Provide any additional information
+                    that helps us better serve you.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 4: Review & Confirm -->
+            <div class="step-panel" id="step-4">
+              <div class="text-center py-8">
+                <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
+                  style="background:linear-gradient(135deg,#f79002,#ffb340)">
+                  <svg width="36" height="36" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+                    <polyline points="6,18 14,24 30,10" />
+                  </svg>
+                </div>
+                <h3 class="font-heading font-black text-2xl mb-3" style="color:#0d2240" data-i18n="confirm_title">Ready
+                  to Submit!</h3>
+                <p class="text-gray-400 text-lg mb-8" data-i18n="confirm_sub">Please review and submit your
+                  registration. Our team will contact you within 24 hours.</p>
+                <div id="review-summary" class="text-left rounded-2xl p-6 mb-6" style="background:#f0f5fb">
+                  <!-- Summary injected by JS -->
+                </div>
+                <!-- Terms -->
+                <label class="flex items-start gap-3 text-sm text-gray-400 mb-6 text-left cursor-pointer">
+                  <input type="checkbox" id="terms" class="mt-0.5 w-4 h-4 accent-orange-500 rounded" />
+                  <span data-i18n="terms_text">I agree to the Terms & Conditions and Privacy Policy of B-Genius Academy.
+                    I confirm that all information provided is accurate.</span>
+                </label>
+                <button onclick="submitForm()" class="btn-primary w-full justify-center text-lg py-4"
+                  data-i18n="submit_btn">Submit Registration</button>
+              </div>
+            </div>
+
+            <!-- Success State -->
+            <div class="step-panel" id="step-success">
+              <div class="text-center py-12">
+                <div class="w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 animate-glow"
+                  style="background:linear-gradient(135deg,#f79002,#ffb340)">
+                  <svg width="44" height="44" fill="none" stroke="white" stroke-width="3" stroke-linecap="round">
+                    <polyline points="8,22 18,30 36,12" />
+                  </svg>
+                </div>
+                <h3 class="font-heading font-black text-3xl mb-3" style="color:#0d2240" data-i18n="success_title">
+                  Registration Successful!</h3>
+                <p class="text-gray-400 text-lg max-w-md mx-auto" data-i18n="success_sub">Thank you for joining B-Genius
+                  Academy. Our team will reach out to you within 24 hours to confirm your child's enrollment.</p>
+                <a href="#programs" class="btn-primary mt-8 inline-flex" data-i18n="success_btn">Explore Programs</a>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Navigation buttons -->
+          <div class="flex justify-between mt-8" id="form-nav">
+            <button id="btn-prev" onclick="prevStep()"
+              class="hidden px-6 py-3 rounded-full font-semibold text-sm transition-all hover:bg-gray-100"
+              style="border:1.5px solid #e0e8f0;color:#4a5568" data-i18n="btn_back">Back</button>
+            <div></div>
+            <button id="btn-next" onclick="nextStep()" class="btn-primary py-3 px-8 text-sm"
+              data-i18n="btn_next">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+     CTA SECTION
+══════════════════════════════════════════════════ -->
+  <section class="relative py-28 overflow-hidden bg-pattern"
+    style="background:linear-gradient(135deg,#071428 0%,#0d2240 50%,#1a3d6e 100%)">
+    <div class="hero-orb w-96 h-96 top-[-4rem] right-[-6rem]" style="background:rgba(247,144,2,0.12)"></div>
+    <div class="hero-orb w-72 h-72 bottom-[-3rem] left-[-3rem]" style="background:rgba(34,111,180,0.15)"></div>
+    <div class="relative max-w-4xl mx-auto px-6 text-center reveal">
+      <div class="section-label mb-4" data-i18n="cta_label">✦ Take the First Step</div>
+      <h2 class="font-heading text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+        <span data-i18n="cta_h2a">Let's Build Their</span><br />
+        <span class="grad-text" data-i18n="cta_h2b">Future Together.</span>
+      </h2>
+      <p class="text-white/60 text-xl mb-10 max-w-2xl mx-auto" data-i18n="cta_sub">
+        One free consultation. Infinite possibilities. Book today and discover which program is the perfect fit for your
+        child.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center">
+        <a href="#contact" class="btn-primary text-lg px-10 py-4 animate-pulse-slow" data-i18n="cta_btn1">Book Free
+          Consultation</a>
+        <a href="#programs" class="btn-outline text-lg px-10 py-4" data-i18n="cta_btn2">View All Programs</a>
+      </div>
+      <!-- Stats row -->
+      <div class="flex flex-wrap justify-center gap-12 mt-16 pt-12" style="border-top:1px solid rgba(255,255,255,0.08)">
+        <div class="text-center">
+          <div class="font-heading font-black text-5xl grad-text">500+</div>
+          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat1">Children Transformed</div>
+        </div>
+        <div class="text-center">
+          <div class="font-heading font-black text-5xl grad-text">8</div>
+          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat2">Expert Programs</div>
+        </div>
+        <div class="text-center">
+          <div class="font-heading font-black text-5xl grad-text">98%</div>
+          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat3">Parent Satisfaction</div>
+        </div>
+        <div class="text-center">
+          <div class="font-heading font-black text-5xl grad-text">10+</div>
+          <div class="text-white/50 text-sm mt-1" data-i18n="cta_stat4">Years of Excellence</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+  <footer class="bg-pattern">
+    <div class="max-w-7xl mx-auto px-6 pt-20 pb-10">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="relative">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center font-heading font-black text-2xl"
+                style="background:linear-gradient(135deg,#f79002,#ffb340)">
+                <span style="color:#fff">B</span>
+              </div>
+              <div
+                class="absolute -bottom-1 -right-1 w-6 h-6 rounded-lg flex items-center justify-center text-xs font-black"
+                style="background:#226fb4;color:#fff;">G</div>
+            </div>
+            <div>
+              <div class="font-heading font-black text-white text-xl" data-i18n="brand">B-Genius</div>
+              <div class="text-xs font-semibold" style="color:#f79002" data-i18n="brand_sub">Academy</div>
+            </div>
+          </div>
+          <p class="text-white/45 text-sm leading-relaxed mb-6" data-i18n="footer_desc">
+            Empowering children and teenagers to discover their potential through positive, interactive, and emotionally
+            intelligent education.
+          </p>
+          <div class="flex gap-3">
+            <a href="#"
+              class="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:bg-orange-DEFAULT"
+              style="background:rgba(255,255,255,0.08)" aria-label="Instagram">
+              <svg width="16" height="16" fill="currentColor" class="text-white">
+                <path
+                  d="M8 2.2c1.9 0 2.1 0 2.9.04.7.03 1.08.15 1.33.25.33.13.57.29.82.54.25.25.41.49.54.82.1.25.22.63.25 1.33.04.78.04 1 .04 2.9s0 2.1-.04 2.9c-.03.7-.15 1.08-.25 1.33-.13.33-.29.57-.54.82-.25.25-.49.41-.82.54-.25.1-.63.22-1.33.25-.78.04-1 .04-2.9.04s-2.1 0-2.9-.04c-.7-.03-1.08-.15-1.33-.25-.33-.13-.57-.29-.82-.54a2.17 2.17 0 01-.54-.82c-.1-.25-.22-.63-.25-1.33C2.2 10.1 2.2 9.88 2.2 8s0-2.1.04-2.9c.03-.7.15-1.08.25-1.33.13-.33.29-.57.54-.82.25-.25.49-.41.82-.54.25-.1.63-.22 1.33-.25.78-.04 1-.04 2.9-.04M8 1C6.07 1 5.83 1.01 5.05 1.05c-.78.03-1.31.16-1.77.34a3.6 3.6 0 00-1.3.85 3.6 3.6 0 00-.85 1.3c-.18.46-.31 1-.34 1.77C.78 6.07.78 6.31.78 8.22s.01 2.16.05 2.94c.03.78.16 1.31.34 1.77.19.48.44.89.85 1.3.41.41.82.66 1.3.85.46.18 1 .31 1.77.34.78.04 1.03.05 2.91.05s2.16-.01 2.94-.05c.78-.03 1.31-.16 1.77-.34.48-.19.89-.44 1.3-.85.41-.41.66-.82.85-1.3.18-.46.31-1 .34-1.77.04-.78.05-1.03.05-2.91s-.01-2.16-.05-2.94c-.03-.78-.16-1.31-.34-1.77a3.6 3.6 0 00-.85-1.3 3.6 3.6 0 00-1.3-.85c-.46-.18-1-.31-1.77-.34C10.16 1.01 9.91 1 8 1zm0 2.89a3.33 3.33 0 100 6.66 3.33 3.33 0 000-6.66zm0 5.5a2.17 2.17 0 110-4.34 2.17 2.17 0 010 4.34zM11.38 4.78a.78.78 0 100-1.56.78.78 0 000 1.56z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:bg-orange-DEFAULT"
+              style="background:rgba(255,255,255,0.08)" aria-label="WhatsApp">
+              <svg width="16" height="16" fill="currentColor" class="text-white">
+                <path
+                  d="M8 1.5A6.5 6.5 0 001.5 8c0 1.15.3 2.23.82 3.17L1 15l3.95-1.3A6.5 6.5 0 108 1.5zm3.32 9.28c-.14.38-.79.74-1.1.79-.27.04-.62.06-.99-.06-.22-.08-.51-.18-.88-.36-1.53-.77-2.5-2.3-2.58-2.41-.08-.11-.65-.87-.65-1.65 0-.79.41-1.17.56-1.33.15-.16.33-.2.43-.2h.31c.1 0 .24-.04.37.28.14.33.47 1.12.51 1.2.04.08.06.17.01.27-.05.1-.08.16-.16.24-.08.08-.16.18-.23.25-.07.07-.15.14-.06.28.09.14.39.61.84 1 .58.51 1.07.67 1.22.74.14.07.23.06.31-.03.08-.09.35-.4.44-.54.09-.14.19-.12.31-.07.13.05.81.38.95.45.14.07.23.1.27.16.04.06.04.35-.1.73z" />
+              </svg>
+            </a>
+            <a href="#"
+              class="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:bg-orange-DEFAULT"
+              style="background:rgba(255,255,255,0.08)" aria-label="Twitter/X">
+              <svg width="14" height="14" fill="currentColor" class="text-white">
+                <path
+                  d="M12.6 1h2.2L9.9 6.6 15.6 15h-4.3l-3.5-4.7L3.8 15H1.6l5.3-6L.9 1h4.4l3.2 4.3L12.6 1zm-.8 12.5h1.2L3.4 2.3H2l9.8 11.2z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <div class="text-white font-heading font-bold text-sm uppercase tracking-wider mb-5" data-i18n="footer_links">
+            Quick Links</div>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-white/50 hover:text-orange-DEFAULT text-sm transition-colors"
+                data-i18n="nav_home">Home</a></li>
+            <li><a href="#about" class="text-white/50 hover:text-orange-DEFAULT text-sm transition-colors"
+                data-i18n="nav_about">About</a></li>
+            <li><a href="#programs" class="text-white/50 hover:text-orange-DEFAULT text-sm transition-colors"
+                data-i18n="nav_programs">Programs</a></li>
+            <li><a href="#pricing" class="text-white/50 hover:text-orange-DEFAULT text-sm transition-colors"
+                data-i18n="nav_packages">Packages</a></li>
+            <li><a href="#contact" class="text-white/50 hover:text-orange-DEFAULT text-sm transition-colors"
+                data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Programs -->
+        <div>
+          <div class="text-white font-heading font-bold text-sm uppercase tracking-wider mb-5" data-i18n="nav_programs">
+            Programs</div>
+          <ul class="space-y-3" id="footer-programs">
+            <!-- Injected by JS -->
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <div class="text-white font-heading font-bold text-sm uppercase tracking-wider mb-5" data-i18n="nav_contact">
+            Contact</div>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="text-orange-DEFAULT mt-0.5">📍</span>
+              <span class="text-white/50 text-sm" data-i18n="footer_addr">Kuwait City, Kuwait</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-orange-DEFAULT">📞</span>
+              <span class="text-white/50 text-sm" dir="ltr">+965 XXXX XXXX</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-orange-DEFAULT">✉️</span>
+              <span class="text-white/50 text-sm">info@bgenius.academy</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-orange-DEFAULT">🕐</span>
+              <span class="text-white/50 text-sm" data-i18n="footer_hours">Sun–Thu: 9AM – 8PM</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8"
+        style="border-top:1px solid rgba(255,255,255,0.07)">
+        <div class="text-white/30 text-xs" data-i18n="footer_copy">&copy; 2025 B-Genius Academy. All rights reserved.
+        </div>
+        <div class="text-white/30 text-xs" data-i18n="footer_slogan">Act to Impact &mdash; Building Tomorrow's Leaders
+          Today</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════ -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
