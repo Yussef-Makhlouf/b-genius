@@ -216,14 +216,14 @@ function setLang(lang) {
    PROGRAMS DATA
 ──────────────────────────────────────────────── */
 const programs = [
-  { emoji:'🧘', color:'#f79002', bg:'rgba(247,144,2,0.08)', border:'rgba(247,144,2,0.18)', key:'p1', descEn:'Mindfulness & emotional regulation for a calmer, focused mind.',     descAr:'الوعي الذهني وضبط العواطف لعقل هادئ ومركّز.', age:'6–14', key_age:'6–14' },
-  { emoji:'🎤', color:'#226fb4', bg:'rgba(34,111,180,0.08)', border:'rgba(34,111,180,0.15)', key:'p2', descEn:'Unleashing creativity through storytelling, art, and performance.', descAr:'إطلاق الإبداع عبر القصص والفنون والأداء.',           age:'8–16', key_age:'8–16' },
-  { emoji:'🦸', color:'#e85d04', bg:'rgba(232,93,4,0.08)',   border:'rgba(232,93,4,0.15)',   key:'p3', descEn:'Building positive behaviors and self-discipline in a fun way.',    descAr:'بناء السلوكيات الإيجابية والانضباط الذاتي.',          age:'5–12', key_age:'5–12' },
-  { emoji:'🎨', color:'#7b2d8b', bg:'rgba(123,45,139,0.08)', border:'rgba(123,45,139,0.15)', key:'p4', descEn:'Connecting emotional intelligence with artistic expression.',        descAr:'ربط الذكاء العاطفي بالتعبير الفني.',                  age:'7–15', key_age:'7–15' },
-  { emoji:'🧪', color:'#0d9e6e', bg:'rgba(13,158,110,0.08)', border:'rgba(13,158,110,0.15)', key:'p5', descEn:'Science-based mindfulness tools for a balanced inner world.',       descAr:'أدوات علمية للتيقظ الذهني وتحقيق التوازن.',           age:'9–17', key_age:'9–17' },
-  { emoji:'👑', color:'#c9950a', bg:'rgba(201,149,10,0.08)', border:'rgba(201,149,10,0.15)', key:'p6', descEn:'Leadership, decision-making, and communication skills for kids.', descAr:'مهارات القيادة واتخاذ القرار والتواصل للصغار.',         age:'8–14', key_age:'8–14' },
-  { emoji:'👨‍👩‍👧', color:'#226fb4', bg:'rgba(34,111,180,0.08)', border:'rgba(34,111,180,0.15)', key:'p7', descEn:'Equipping parents with positive, science-based parenting tools.', descAr:'تجهيز الأهل بأدوات تربوية إيجابية مبنية على العلم.',  age:'Parents', key_age:'للأهل' },
-  { emoji:'☀️', color:'#f79002', bg:'rgba(247,144,2,0.08)', border:'rgba(247,144,2,0.18)', key:'p8', descEn:'Morning energy, growth mindset, and daily success habits.',        descAr:'طاقة صباحية وعقلية النمو وعادات النجاح اليومية.',     age:'10–18', key_age:'10–18' },
+  { emoji:'<i class="ph-duotone ph-flower-lotus"></i>', color:'#f79002', key:'p1', descEn:'Mindfulness & emotional regulation for a calmer, focused mind.',     descAr:'الوعي الذهني وضبط العواطف لعقل هادئ ومركّز.', age:'6–14', key_age:'6–14' },
+  { emoji:'<i class="ph-duotone ph-microphone-stage"></i>', color:'#226fb4', key:'p2', descEn:'Unleashing creativity through storytelling, art, and performance.', descAr:'إطلاق الإبداع عبر القصص والفنون والأداء.',           age:'8–16', key_age:'8–16' },
+  { emoji:'<i class="ph-duotone ph-shield-star"></i>', color:'#e85d04', key:'p3', descEn:'Building positive behaviors and self-discipline in a fun way.',    descAr:'بناء السلوكيات الإيجابية والانضباط الذاتي.',          age:'5–12', key_age:'5–12' },
+  { emoji:'<i class="ph-duotone ph-palette"></i>', color:'#7b2d8b', key:'p4', descEn:'Connecting emotional intelligence with artistic expression.',        descAr:'ربط الذكاء العاطفي بالتعبير الفني.',                  age:'7–15', key_age:'7–15' },
+  { emoji:'<i class="ph-duotone ph-flask"></i>', color:'#0d9e6e', key:'p5', descEn:'Science-based mindfulness tools for a balanced inner world.',       descAr:'أدوات علمية للتيقظ الذهني وتحقيق التوازن.',           age:'9–17', key_age:'9–17' },
+  { emoji:'<i class="ph-duotone ph-crown"></i>', color:'#c9950a', key:'p6', descEn:'Leadership, decision-making, and communication skills for kids.', descAr:'مهارات القيادة واتخاذ القرار والتواصل للصغار.',         age:'8–14', key_age:'8–14' },
+  { emoji:'<i class="ph-duotone ph-users-three"></i>', color:'#226fb4', key:'p7', descEn:'Equipping parents with positive, science-based parenting tools.', descAr:'تجهيز الأهل بأدوات تربوية إيجابية مبنية على العلم.',  age:'Parents', key_age:'للأهل' },
+  { emoji:'<i class="ph-duotone ph-sun"></i>', color:'#f79002', key:'p8', descEn:'Morning energy, growth mindset, and daily success habits.',        descAr:'طاقة صباحية وعقلية النمو وعادات النجاح اليومية.',     age:'10–18', key_age:'10–18' },
 ];
 
 function renderPrograms() {
@@ -234,14 +234,14 @@ function renderPrograms() {
   const btnTxt   = currentLang === 'ar' ? 'سجّل الآن' : 'Enroll Now';
   grid.innerHTML = programs.map((p, i) => `
     <div class="program-card reveal" style="transition-delay:${i*0.08}s;background:#0f2e55;border:1px solid rgba(255,255,255,0.06)" 
-         onmouseenter="this.style.background='${p.bg.replace('0.08','0.05')}';this.style.borderColor='${p.border}'"
+         onmouseenter="this.style.background='${p.bg ? p.bg.replace('0.08','0.05') : '#1a3d6e'}';this.style.borderColor='${p.border || p.color}'"
          onmouseleave="this.style.background='#0f2e55';this.style.borderColor='rgba(255,255,255,0.06)'">
       <div style="position:absolute;top:0;left:0;right:0;height:3px;background:${p.color};border-radius:24px 24px 0 0"></div>
-      <div style="font-size:2.5rem;margin-bottom:1rem">${p.emoji}</div>
+      <div style="font-size:3.5rem;margin-bottom:1rem;color:${p.color}">${p.emoji}</div>
       <h3 class="font-heading font-bold text-white text-lg mb-2">${t[p.key] || p.key}</h3>
       <p style="color:rgba(255,255,255,0.5);font-size:.875rem;line-height:1.6;margin-bottom:1.2rem">${currentLang === 'ar' ? p.descAr : p.descEn}</p>
       <div style="display:flex;justify-content:space-between;align-items:center">
-        <span style="font-size:.78rem;color:${p.color};font-weight:700;background:${p.bg};padding:.3rem .8rem;border-radius:50px;border:1px solid ${p.border}">${ageLabel} ${currentLang === 'ar' ? p.key_age : p.age}</span>
+        <span style="font-size:.78rem;color:${p.color};font-weight:700;background:rgba(255,255,255,0.05);padding:.3rem .8rem;border-radius:50px;">${ageLabel} ${currentLang === 'ar' ? p.key_age : p.age}</span>
         <a href="#contact" style="font-size:.8rem;color:${p.color};font-weight:700;text-decoration:none;transition:opacity .2s" onmouseenter="this.style.opacity='.7'" onmouseleave="this.style.opacity='1'">${btnTxt} →</a>
       </div>
     </div>
@@ -330,28 +330,28 @@ const testimonials = [
     roleEn:'Mother of 2 – Kuwait', roleAr:'أم لطفلين – الكويت',
     textEn:'The transformation in my son after just 3 months in the Mindful Program is incredible. He\'s calmer, more focused, and so much more confident. B-Genius is truly exceptional.',
     textAr:'التحوّل الذي حدث في ابني بعد 3 أشهر فقط في برنامج التيقظ الذهني مذهل. أصبح أكثر هدوءاً وتركيزاً وثقةً بنفسه. أكاديمية بي جينيس استثنائية حقاً.',
-    stars: 5, emoji:'👩‍💼'
+    stars: 5, emoji:'<i class="ph-duotone ph-user-circle"></i>'
   },
   {
     nameEn:'Mohammed Al-Otaibi', nameAr:'محمد العتيبي',
     roleEn:'Father – Saudi Arabia', roleAr:'أب – المملكة العربية السعودية',
     textEn:'We enrolled our daughter in the Creative Voices Hub and it was the best decision. She now leads her school drama club and communicates beautifully. Thank you B-Genius!',
     textAr:'سجّلنا ابنتنا في مركز الأصوات الإبداعية وكان ذلك أفضل قرار اتخذناه. أصبحت تقود نادي المسرح في مدرستها وتتواصل بشكل رائع. شكراً بي جينيس!',
-    stars: 5, emoji:'👨‍💼'
+    stars: 5, emoji:'<i class="ph-duotone ph-user-circle"></i>'
   },
   {
     nameEn:'Fatima Khalid', nameAr:'فاطمة خالد',
     roleEn:'Mother – UAE', roleAr:'أم – الإمارات العربية المتحدة',
     textEn:'The Positive Parenting Sessions changed how our entire family communicates. I feel equipped and empowered as a parent. The trainers are world-class.',
     textAr:'جلسات التربية الإيجابية غيّرت طريقة تواصل عائلتنا بالكامل. أشعر الآن بالتجهيز والتمكين كأم. المدرّبون على مستوى عالمي.',
-    stars: 5, emoji:'👩'
+    stars: 5, emoji:'<i class="ph-duotone ph-user-circle"></i>'
   },
   {
     nameEn:'Ahmad Al-Hamdan', nameAr:'أحمد الحمدان',
     roleEn:'Father of 3 – Kuwait', roleAr:'أب لثلاثة أطفال – الكويت',
     textEn:'My three kids all attend different programs at B-Genius and the results across all of them have been outstanding. Worth every fils.',
     textAr:'أطفالي الثلاثة يحضرون برامج مختلفة في بي جينيس والنتائج لديهم جميعاً كانت ممتازة. يستحق كل فلس.',
-    stars: 5, emoji:'👨'
+    stars: 5, emoji:'<i class="ph-duotone ph-user-circle"></i>'
   }
 ];
 
@@ -363,7 +363,7 @@ function renderTestimonials() {
   const dots  = document.getElementById('test-dots');
   if (!track || !dots) return;
   const t = i18n[currentLang];
-  const starHtml = n => Array(n).fill('<span style="color:#f79002">★</span>').join('');
+  const starHtml = n => Array(n).fill('<span style="color:#f79002"><i class="ph-fill ph-star"></i></span>').join('');
 
   track.innerHTML = testimonials.map(ts => `
     <div class="testimonial-card" style="min-width:100%;background:#0f2e55;border:1px solid rgba(255,255,255,0.07)">
