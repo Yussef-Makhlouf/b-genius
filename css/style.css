@@ -773,22 +773,22 @@ h4,
   border-radius: 14px;
   font-size: 0.95rem;
   font-family: inherit;
-  /* transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); */
+  /*transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);*/
   background: #fff;
   color: #1a1a2e;
   outline: none;
-  box-shadow: 0 2px 8px rgba(34, 111, 180, 0.06);
+  /* box-shadow: 0 2px 8px rgba(34, 111, 180, 0.06); */
 }
 .form-input:focus {
   border-color: var(--orange);
-  box-shadow:
-    0 0 0 4px rgba(247, 144, 2, 0.12),
-    0 8px 24px rgba(247, 144, 2, 0.12);
+  /* box-shadow:
+  0 0 0 4px rgba(247, 144, 2, 0.12),
+    0 8px 24px rgba(247, 144, 2, 0.12); */
   /* transform: translateY(-2px); */
 }
-.form-input::placeholder {
+/* .form-input::placeholder {
   color: #b0b8c1;
-}
+} */
 .form-label {
   font-size: 0.875rem;
   font-weight: 700;
@@ -810,7 +810,7 @@ h4,
   outline: none;
   cursor: pointer;
   /* transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); */
-  box-shadow: 0 2px 8px rgba(34, 111, 180, 0.06);
+  /* box-shadow: 0 2px 8px rgba(34, 111, 180, 0.06); */
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23226fb4' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -819,9 +819,9 @@ h4,
 }
 .form-select:focus {
   border-color: var(--orange);
-  box-shadow:
+  /* box-shadow:
     0 0 0 4px rgba(247, 144, 2, 0.12),
-    0 8px 24px rgba(247, 144, 2, 0.12);
+    0 8px 24px rgba(247, 144, 2, 0.12); */
   /* transform: translateY(-2px); */
 }
 .step-panel {

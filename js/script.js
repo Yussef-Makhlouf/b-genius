@@ -48,6 +48,7 @@ const i18n = {
     opt_kinder:'Kindergarten', opt_primary:'Primary', opt_middle:'Middle School', opt_high:'High School',
     f_civil:'Civil ID', ph_civil:'Civil ID number',
     f_medical:'Medical Conditions (if any)', ph_medical:'Describe any relevant medical conditions...',
+    f_medical_help:'Optional: This helps us provide better support if needed.',
     f_parentname:'Parent / Guardian Name', ph_parentname:'Full name',
     f_relation:'Relationship to Student', sel_relation:'Select relationship',
     opt_father:'Father', opt_mother:'Mother', opt_guardian:'Guardian', opt_other:'Other',
@@ -133,6 +134,7 @@ const i18n = {
     opt_kinder:'رياض أطفال', opt_primary:'ابتدائي', opt_middle:'متوسط', opt_high:'ثانوي',
     f_civil:'الرقم المدني', ph_civil:'الرقم المدني',
     f_medical:'الحالات الصحية (إن وجدت)', ph_medical:'اذكر أي حالات صحية ذات صلة...',
+    f_medical_help:'اختياري: هذا يساعدنا على تقديم دعم أفضل عند الحاجة.',
     f_parentname:'اسم ولي الأمر', ph_parentname:'الاسم الكامل',
     f_relation:'صلة القرابة', sel_relation:'اختر الصلة',
     opt_father:'الأب', opt_mother:'الأم', opt_guardian:'وصي', opt_other:'أخرى',
@@ -176,10 +178,11 @@ const i18n = {
   }
 };
 
-let currentLang = 'en';
+let currentLang = localStorage.getItem('bgenius_lang') || 'en';
 
 function setLang(lang) {
   currentLang = lang;
+  localStorage.setItem('bgenius_lang', lang);
   const html = document.getElementById('html-root');
   html.setAttribute('lang', lang);
   html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
@@ -557,16 +560,16 @@ function buildReview() {
   const isAr = currentLang === 'ar';
 
   summary.innerHTML = `
-    <div style="font-weight:800;font-family:'Syne','Cairo',sans-serif;color:#226fb4;margin-bottom:.8rem;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase">${t.review_student}</div>
+    <div class="font-heading" style="font-weight:800;color:#226fb4;margin-bottom:.8rem;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase ">${t.review_student}</div>
     ${row(t.f_fullname, name)}
     ${row(t.f_gender,   isAr ? (gender==='male'?'ذكر':gender==='female'?'أنثى':gender) : gender)}
     ${row(t.f_age,      age + (isAr ? ' سنة' : ' yrs'))}
     ${row(t.f_stage,    stage)}
-    <div style="font-weight:800;font-family:'Syne','Cairo',sans-serif;color:#226fb4;margin-top:1rem;margin-bottom:.8rem;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase">${t.review_parent}</div>
+    <div class="font-heading" style="font-weight:800;color:#226fb4;margin-top:1rem;margin-bottom:.8rem;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase ">${t.review_parent}</div>
     ${row(t.f_parentname, parentN)}
     ${row(t.f_phone1,     phone)}
     ${row(t.f_email,      email)}
-    <div style="font-weight:800;font-family:'Syne','Cairo',sans-serif;color:#226fb4;margin-top:1rem;margin-bottom:.8rem;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase">${t.review_program}</div>
+    <div class="font-heading" style="font-weight:800;color:#226fb4;margin-top:1rem;margin-bottom:.8rem;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase">${t.review_program}</div>
     ${row(t.f_program,  prog)}
     ${row(t.f_subtype,  subt)}
     ${row(t.f_duration, dur)}
@@ -630,12 +633,7 @@ function observeReveal() {
    INIT
 ──────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  renderPrograms();
-  renderPricing();
-  renderTestimonials();
-  renderDaysCheckboxes();
-  renderFooterPrograms();
-  updateStepUI();
+  setLang(currentLang);
   observeReveal();
 
   // Auto-start carousel timer
