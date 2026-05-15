@@ -68,7 +68,9 @@ body {
 [dir="rtl"] h2,
 [dir="rtl"] h3,
 [dir="rtl"] h4,
-[dir="rtl"] .font-heading {
+[dir="rtl"] .font-heading,
+[dir="rtl"] .footer-col-heading,
+[dir="rtl"] .footer-cta-label {
   font-family: var(--font-ar-head);
 }
 
@@ -76,7 +78,9 @@ h1,
 h2,
 h3,
 h4,
-.font-heading {
+.font-heading,
+.footer-col-heading,
+.footer-cta-label {
   font-family: var(--font-en-head);
 }
 
@@ -1046,7 +1050,6 @@ footer>* {
 
 /* Footer column heading */
 .footer-col-heading {
-  font-family: var(--font-en-head);
   font-weight: 800;
   font-size: 0.72rem;
   letter-spacing: 0.18em;

@@ -88,6 +88,7 @@ const i18n = {
     review_student:'Student', review_parent:'Parent', review_program:'Program',
     footer_social_insta: 'Instagram', footer_social_wa: 'WhatsApp', footer_social_x: 'X', footer_social_tiktok: 'TikTok',
     footer_privacy: 'Privacy Policy', footer_terms: 'Terms of Service', footer_nl_ph: 'Your email address',
+    footer_cta_label: 'Ready to start?',
   },
   ar: {
     brand:'بي جينيس', brand_sub:'أكاديمية',
@@ -175,6 +176,7 @@ const i18n = {
     review_student:'الطالب', review_parent:'ولي الأمر', review_program:'البرنامج',
     footer_social_insta: 'إنستغرام', footer_social_wa: 'واتساب', footer_social_x: 'إكس', footer_social_tiktok: 'تيك توك',
     footer_privacy: 'سياسة الخصوصية', footer_terms: 'شروط الخدمة', footer_nl_ph: 'عنوان بريدك الإلكتروني',
+    footer_cta_label: 'هل أنت مستعد؟',
   }
 };
 
