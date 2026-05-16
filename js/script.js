@@ -193,8 +193,14 @@ function setLang(lang) {
   ['en', 'ar'].forEach(l => {
     const main = document.getElementById(`btn-${l}`);
     const mob = document.getElementById(`m-btn-${l}`);
-    if (main) { main.className = `lang-btn ${l === lang ? 'active' : 'inactive'}`; }
-    if (mob) { mob.className = `lang-btn ${l === lang ? 'active' : 'inactive'}`; }
+    if (main) {
+      main.classList.remove('active', 'inactive');
+      main.classList.add(l === lang ? 'active' : 'inactive');
+    }
+    if (mob) {
+      mob.classList.remove('active', 'inactive');
+      mob.classList.add(l === lang ? 'active' : 'inactive');
+    }
   });
 
   // Apply translations
@@ -242,16 +248,23 @@ function renderPrograms() {
   const ageLabel = currentLang === 'ar' ? 'العمر:' : 'Age:';
   const btnTxt = currentLang === 'ar' ? 'سجّل الآن' : 'Enroll Now';
   grid.innerHTML = programs.map((p, i) => `
-    <div class="program-card reveal" style="transition-delay:${i * 0.08}s;background:#0f2e55;border:1px solid rgba(255,255,255,0.06)" 
-         onmouseenter="this.style.background='${p.bg ? p.bg.replace('0.08', '0.05') : '#1a3d6e'}';this.style.borderColor='${p.border || p.color}'"
-         onmouseleave="this.style.background='#0f2e55';this.style.borderColor='rgba(255,255,255,0.06)'">
-      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:${p.color};border-radius:24px 24px 0 0"></div>
-      <div style="font-size:3.5rem;margin-bottom:1rem;color:${p.color}">${p.emoji}</div>
-      <h3 class="font-heading font-bold text-white text-lg mb-2">${t[p.key] || p.key}</h3>
-      <p style="color:rgba(255,255,255,0.5);font-size:.875rem;line-height:1.6;margin-bottom:1.2rem">${currentLang === 'ar' ? p.descAr : p.descEn}</p>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:2rem ">
-        <span style="font-size:.78rem;color:${p.color};font-weight:700;background:rgba(255,255,255,0.05);padding:.3rem .8rem;border-radius:50px;">${ageLabel} ${currentLang === 'ar' ? p.key_age : p.age}</span>
-        <a href="#contact" style="font-size:.8rem;color:${p.color};  border-radius:50px;padding:.3rem .8rem;background:rgba(255,255,255,0.05); font-weight:700;text-decoration:none;transition:opacity .2s" onmouseenter="this.style.opacity='.7'" onmouseleave="this.style.opacity='1'">${btnTxt} →</a>
+    <div class="program-card reveal group relative overflow-hidden flex flex-col" 
+         style="transition-delay:${i * 0.08}s; background-color:${p.color}; border-radius:24px; padding:2rem; transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);" 
+         onmouseenter="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 20px 40px ${p.color}40';"
+         onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0,0,0,0.05)';">
+      <div style="font-size:3.5rem; margin-bottom:1rem; color:#ffffff; opacity:0.9;">${p.emoji}</div>
+      <h3 class="font-heading font-bold text-white text-xl mb-2">${t[p.key] || p.key}</h3>
+      <p style="color:#fff; font-size:.9rem; line-height:1.6; margin-bottom:1.5rem">${currentLang === 'ar' ? p.descAr : p.descEn}</p>
+      
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto;">
+        <span style="font-size:.8rem; color:${p.color}; font-weight:700; color:#fff; ">${ageLabel} ${currentLang === 'ar' ? p.key_age : p.age}</span>
+        
+        <a href="#contact" class="flex items-center justify-center transition-all duration-300" 
+           style="font-size:.85rem; color:${p.color}; color:#fff; padding:.4rem 1rem;  font-weight:700; text-decoration:none; " 
+           onmouseenter="this.style.transform='scale(1.05)'" 
+           onmouseleave="this.style.transform='scale(1)'">
+           ${btnTxt} <span style="display:inline-block; margin-inline-start:4px" dir="ltr">→</span>
+        </a>
       </div>
     </div>
   `).join('');
@@ -270,7 +283,7 @@ function renderPrograms() {
 //       ar: ['4 جلسات شهرياً', 'ورشة واحدة', 'دعم عبر البريد', 'شهادة إتمام', 'أنشطة أساسية']
 //     },
 //     cta: { en: 'Get Started', ar: 'ابدأ الآن' },
-//     featured: false, bg: '#fff', textColor: '#0d2240'
+//     featured: false, bg: '#fff', textColor: '#226fb4'
 //   },
 //   {
 //     tier: { en: 'Growth', ar: 'النمو' },
@@ -290,7 +303,7 @@ function renderPrograms() {
 //       ar: ['جلسات غير محدودة', 'جميع الورش', 'تدريب فردي', 'شهادات مميزة', 'جميع الأنشطة', 'تقرير تقدم شهري', 'أولوية التسجيل']
 //     },
 //     cta: { en: 'Maximize Impact', ar: 'حقّق التأثير' },
-//     featured: false, bg: '#fff', textColor: '#0d2240'
+//     featured: false, bg: '#fff', textColor: '#226fb4'
 //   }
 // ];
 
@@ -307,7 +320,7 @@ function renderPrograms() {
 //       <div style="margin-bottom:1.5rem">
 //         <div style="font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:${feat ? '#f79002' : '#226fb4'};margin-bottom:.5rem">${p.tier[currentLang]}</div>
 //         <div style="display:flex;align-items:baseline;gap:.3rem">
-//           <span style="font-size:2.8rem;font-weight:900;font-family:'Syne',sans-serif;color:${feat ? '#fff' : '#0d2240'}">${p.price}</span>
+//           <span style="font-size:2.8rem;font-weight:900;font-family:'Syne',sans-serif;color:${feat ? '#fff' : '#226fb4'}">${p.price}</span>
 //           <span style="font-size:1rem;font-weight:600;color:${feat ? 'rgba(255,255,255,0.6)' : '#8899aa'}">${p.curr}</span>
 //           <span style="font-size:.85rem;color:${feat ? 'rgba(255,255,255,0.5)' : '#8899aa'}">${perMonth}</span>
 //         </div>
