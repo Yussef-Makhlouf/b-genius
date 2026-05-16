@@ -74,26 +74,14 @@
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <div class="w-full flex items-center justify-between">
       <!-- Logo -->
-      <a href="#" class="flex items-center gap-3 group" aria-label="B-Genius Academy home">
-        <div class="relative">
-          <div class="w-10 h-10 rounded-xl flex items-center justify-center font-heading font-black text-xl"
-            style="background: linear-gradient(135deg, #f79002, #ffb340)">
-            <span style="color: #fff">B</span>
-          </div>
-          <div
-            class="absolute -bottom-1 -right-1 w-5 h-5 rounded-lg flex items-center justify-center text-xs font-black"
-            style="background: #226fb4; color: #fff">
-            G
-          </div>
-        </div>
-        <div class="ltr:ml-1 rtl:mr-1">
-          <div class="font-heading font-black text-white text-lg leading-none tracking-tight" data-i18n="brand">
-            B-Genius
-          </div>
-          <div class="text-xs font-medium" style="color: #f79002; letter-spacing: 0.06em" data-i18n="brand_sub">
-            Academy
-          </div>
-        </div>
+      <a href="#" class="flex items-center gap-2 group" aria-label="B-Genius Academy home">
+        <img
+          src="images/logo-white.png"
+          alt="B-Genius Academy Logo"
+          class="h-12 w-auto object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+          loading="eager"
+          decoding="async"
+        />
       </a>
 
       <!-- Desktop Nav -->
@@ -335,15 +323,31 @@
   <!-- ══════════════════════════════════════════════════
      ABOUT SECTION
 ══════════════════════════════════════════════════ -->
-  <section id="about" class="section-pad bg-pattern-light" style="background-color: #f8f9fc">
-    <div class="max-w-7xl mx-auto px-6">
+  <section id="about" class="section-pad relative overflow-hidden" style="background-color: #f8f9fc">
+    <!-- Pattern background overlay -->
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: url('images/pattern-navy.png'); background-size: 420px; background-repeat: repeat; opacity: 0.04;"></div>
+    <!-- Decorative sign watermark -->
+    <div class="absolute -bottom-10 -right-10 w-72 h-72 pointer-events-none select-none z-0 hidden lg:block">
+      <img src="images/sign-orange.png" alt="" class="w-full h-full object-contain opacity-10" aria-hidden="true" />
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <!-- Left: Visual collage -->
         <div class="relative reveal-left">
           <div class="relative">
-            <!-- Main image -->
-            <div class="rounded-3xl overflow-hidden h-72 sm:h-80 md:h-96 flex items-center justify-center p-6" >
-              <img src="images/b-genius-1.png" alt="B-Genius Academy" class="w-full h-full object-contain " />
+            <!-- Decorative ring -->
+            <div class="absolute -inset-4 rounded-[2.5rem] border-2 border-dashed border-[#226fb4]/20 pointer-events-none"></div>
+            <!-- Glow blob -->
+            <div class="absolute -bottom-6 -left-6 w-48 h-48 rounded-full bg-[#f79002]/20 blur-2xl pointer-events-none"></div>
+            <div class="absolute -top-6 -right-6 w-40 h-40 rounded-full bg-[#226fb4]/20 blur-2xl pointer-events-none"></div>
+            <!-- Main image card -->
+            <div class="rounded-3xl overflow-hidden shadow-2xl relative z-10" style="background: linear-gradient(135deg, #eef4fb 0%, #f8f9fc 100%); border: 1px solid rgba(34,111,180,0.1);">
+              <img src="images/b-genius-1.png" alt="B-Genius Academy" class="w-full h-auto object-contain p-6" loading="lazy" decoding="async" />
+            </div>
+            <!-- Floating logo badge -->
+            <div class="absolute -bottom-5 -right-5 z-20 bg-white rounded-2xl p-3 shadow-xl border border-[#226fb4]/15">
+              <img src="images/sign-navy.png" alt="B-Genius Sign" class="w-16 h-16 object-contain" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -547,8 +551,18 @@
   <!-- ══════════════════════════════════════════════════
      REGISTRATION / CONTACT FORM
 ══════════════════════════════════════════════════ -->
-  <section id="contact" class="section-pad bg-pattern" style="background-color: #f0f5fb">
-    <div class="max-w-4xl mx-auto px-3">
+  <section id="contact" class="section-pad relative overflow-hidden" style="background-color: #f0f5fb">
+    <!-- Pattern texture overlay -->
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: url('images/pattern-orange.png'); background-size: 400px; background-repeat: repeat; opacity: 0.04;"></div>
+    <!-- Decorative sign watermark top-left -->
+    <div class="absolute -top-12 -left-12 w-72 h-72 pointer-events-none select-none z-0 hidden lg:block">
+      <img src="images/sign-orange.png" alt="" class="w-full h-full object-contain opacity-[0.07]" aria-hidden="true" loading="lazy" />
+    </div>
+    <!-- Decorative sign watermark bottom-right -->
+    <div class="absolute -bottom-12 -right-12 w-64 h-64 pointer-events-none select-none z-0 hidden lg:block">
+      <img src="images/sign-navy.png" alt="" class="w-full h-full object-contain opacity-[0.06]" aria-hidden="true" loading="lazy" />
+    </div>
+    <div class="max-w-4xl mx-auto px-3 relative z-10">
       <div class="text-center mb-12 reveal">
         <div class="section-label" data-i18n="form_label">✦ Join Us</div>
         <h2 class="font-heading text-4xl lg:text-5xl font-black leading-tight mt-3" style="color: #226fb4">
@@ -568,14 +582,23 @@
             overflow: hidden;
           ">
         <!-- Progress indicator -->
-        <div style="
-              background: linear-gradient(135deg, #1a5490, #226fb4);
-              padding: 2rem;
-            ">
-          <div class="flex items-center justify-center gap-0" id="progress-bar">
+        <div class="relative overflow-hidden" style="background: linear-gradient(135deg, #1a5490, #226fb4); padding: 2rem;">
+          <!-- Pattern overlay inside header -->
+          <div class="absolute inset-0 pointer-events-none" style="background-image: url('images/pattern-navy.png'); background-size: 300px; background-repeat: repeat; opacity: 0.06;"></div>
+          <!-- Logo in the header -->
+          <div class="flex justify-center mb-4 relative z-10">
+            <img
+              src="images/logo-white.png"
+              alt="B-Genius Academy"
+              class="h-10 w-auto object-contain opacity-90 drop-shadow-md"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="flex items-center justify-center gap-0 relative z-10" id="progress-bar">
             <!-- Injected by JS -->
           </div>
-          <div class="text-center mt-4">
+          <div class="text-center mt-4 relative z-10">
             <div class="text-white font-heading font-bold text-lg" id="step-title" data-i18n="step1_title">
               Student Information
             </div>
@@ -959,12 +982,16 @@
       </svg>
     </div>
 
-    <!-- Decorative Watermark Logo & Orbs -->
+    <!-- Pattern texture overlay -->
+    <div class="absolute inset-0 z-0 pointer-events-none" style="background-image: url('images/pattern-navy.png'); background-size: 380px; background-repeat: repeat; opacity: 0.08; mix-blend-mode: multiply;"></div>
+
+    <!-- Decorative Orbs -->
     <div class="absolute top-[20%] right-[-10%] w-[500px] h-[500px] rounded-full mix-blend-screen filter blur-[150px] opacity-30 pointer-events-none z-0" style="background: radial-gradient(circle, #f79002 0%, transparent 70%);"></div>
     <div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full mix-blend-screen filter blur-[100px] opacity-20 pointer-events-none z-0" style="background: radial-gradient(circle, #00d4ff 0%, transparent 70%);"></div>
-    
-    <div class="absolute bottom-[-5%] right-[-5%] text-white/5 font-heading font-black text-[35rem] leading-none select-none pointer-events-none z-0">
-      B
+
+    <!-- Watermark sign image instead of text "B" -->
+    <div class="absolute bottom-[-8%] right-[-4%] w-[420px] h-[420px] pointer-events-none select-none z-0 hidden md:block">
+      <img src="images/sign-white.png" alt="" class="w-full h-full object-contain opacity-[0.06]" aria-hidden="true" loading="lazy" />
     </div>
 
     <div class="max-w-7xl mx-auto px-6 pt-32 pb-12 relative z-20">
@@ -975,18 +1002,13 @@
         <div class="lg:col-span-5 flex flex-col justify-between">
           <div>
             <div class="flex items-center gap-4 mb-8">
-              <div class="relative">
-                <div class="w-16 h-16 rounded-2xl flex items-center justify-center font-heading font-black text-3xl" style="background: linear-gradient(135deg, #f79002, #ffb340); box-shadow: 0 10px 30px rgba(247, 144, 2, 0.3);">
-                  <span style="color: #fff">B</span>
-                </div>
-                <div class="absolute -bottom-2 -right-2 w-8 h-8 rounded-xl flex items-center justify-center text-sm font-black border-2 border-[#226fb4]" style="background: white; color: #226fb4; box-shadow: 0 4px 12px rgba(34, 111, 180, 0.3);">
-                  G
-                </div>
-              </div>
-              <div>
-                <div class="font-heading font-black text-white text-3xl leading-none tracking-tight" data-i18n="brand">B-Genius</div>
-                <div class="text-[#f79002] font-bold text-xs tracking-[0.15em] mt-1 uppercase" data-i18n="brand_sub">Academy</div>
-              </div>
+              <img
+                src="images/logo-white.png"
+                alt="B-Genius Academy Logo"
+                class="h-16 w-auto object-contain drop-shadow-lg"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             
             <p class="text-white/80 leading-relaxed text-lg mb-10 max-w-md font-light" data-i18n="footer_desc">
