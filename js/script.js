@@ -436,7 +436,7 @@ function renderFooterPrograms() {
   if (!el) return;
   const t = i18n[currentLang];
   const keys = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'];
-  el.innerHTML = keys.map(k => `<li><a href="#contact" style="color:rgba(255,255,255,0.45);font-size:.875rem;text-decoration:none;transition:color .2s" onmouseenter="this.style.color='#f79002'" onmouseleave="this.style.color='rgba(255,255,255,0.45)'">${t[k] || k}</a></li>`).join('');
+  el.innerHTML = keys.map(k => `<li><a href="#contact" class="text-white/70 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 font-medium">${t[k] || k}</a></li>`).join('');
 }
 
 /* ────────────────────────────────────────────────

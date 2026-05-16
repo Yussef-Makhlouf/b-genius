@@ -180,127 +180,153 @@
   <!-- ══════════════════════════════════════════════════
      HERO SECTION
 ══════════════════════════════════════════════════ -->
-  <section id="hero" class="bg-pattern">
-    <!-- Orbs -->
-    <div class="hero-orb w-96 h-96 top-[-6rem] right-[-4rem]" style="background: rgba(247, 144, 2, 0.18)"></div>
-    <div class="hero-orb w-72 h-72 bottom-[5rem] left-[-3rem]" style="background: rgba(34, 111, 180, 0.2)"></div>
-    <div class="hero-orb w-48 h-48 top-1/2 left-1/3" style="background: rgba(247, 144, 2, 0.1)"></div>
+  <section id="hero" class="relative bg-[#226fb4] overflow-hidden min-h-screen flex items-center pt-20">
+    <!-- Background Image with #226fb4 Overlay Layer -->
+    <div class="absolute inset-0 z-0">
+      <img src="images/childs-happy.png" alt="Happy Children" class="w-full h-full object-cover mix-blend-overlay opacity-30">
+      <div class="absolute inset-0 bg-gradient-to-r from-[#226fb4] via-[#226fb4]/90 to-[#226fb4]/60 mix-blend-multiply"></div>
+      <div class="absolute inset-0 bg-[#226fb4]/40"></div>
+    </div>
 
-    <!-- Decorative ring -->
-    <div class="absolute top-24 right-16 w-64 h-64 opacity-10 animate-spin-slow hidden lg:block"
-      style="border: 2px dashed #f79002; border-radius: 50%"></div>
+    <!-- Aurora Orbs -->
+    <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full mix-blend-screen filter blur-[120px] opacity-60 animate-float z-0" style="background: radial-gradient(circle, #f79002 0%, transparent 70%);"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full mix-blend-screen filter blur-[130px] opacity-50 animate-float-2 z-0" style="background: radial-gradient(circle, #00d4ff 0%, transparent 70%);"></div>
+    <div class="absolute top-[40%] left-[60%] w-[400px] h-[400px] rounded-full mix-blend-screen filter blur-[100px] opacity-40 animate-float-3 z-0" style="background: radial-gradient(circle, #ffb340 0%, transparent 70%);"></div>
 
-    <div class="relative max-w-7xl mx-auto px-6 pt-36 pb-24 lg:pt-44 lg:pb-32">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
-        <!-- LEFT: Copy -->
-        <div class="reveal-left">
-          <div class="section-label" data-i18n="hero_label">
-            ✦ Act to Impact
+    <!-- Background Grid/Pattern for extra texture -->
+    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+    <div class="relative w-full max-w-7xl mx-auto px-6 pt-24 pb-24 lg:pt-32 lg:pb-32 z-10">
+      <div class="grid lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- LEFT: Copy (Col span 6) -->
+        <div class="lg:col-span-6 reveal-left">
+          <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 mb-8 backdrop-blur-md transition-transform hover:scale-105">
+            <i class="ph-fill ph-sparkle text-[#f79002] text-xl animate-pulse"></i>
+            <span class="text-white text-xs font-black tracking-[0.2em] uppercase" data-i18n="hero_label">ACT TO IMPACT</span>
           </div>
-          <h1
-            class="font-heading text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.08] mb-6 tracking-tight">
+          
+          <h1 class="font-heading text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight mb-8">
             <span data-i18n="hero_h1a">Where Potential</span><br />
-            <span class="grad-text" data-i18n="hero_h1b">Becomes Purpose.</span>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#f79002] to-[#ffce6a]" data-i18n="hero_h1b">Becomes Purpose.</span>
           </h1>
-          <p class="text-white/65 text-lg leading-relaxed mb-8 max-w-lg" data-i18n="hero_sub">
-            Interactive programs that help children and teenagers build
-            confidence, emotional intelligence, creativity, communication, and
-            life skills.
+          
+          <p class="text-white/80 text-xl font-light leading-relaxed mb-10 max-w-lg" data-i18n="hero_sub">
+            Interactive programs that help children and teenagers build confidence, emotional intelligence, creativity, communication, and life skills.
           </p>
 
-          <div class="flex flex-wrap gap-3 mb-10">
-            <a href="#programs" class="btn-primary" data-i18n="hero_cta1">Explore Programs</a>
-            <a href="#contact" class="btn-outline" data-i18n="hero_cta2">Book Free Session</a>
+          <div class="flex flex-wrap gap-5 mb-14">
+            <a href="#programs" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-gradient-to-r from-[#f79002] to-[#d97800] rounded-full overflow-hidden hover:scale-105 hover:shadow-[0_10px_40px_rgba(247,144,2,0.4)]" data-i18n="hero_cta1">
+              <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-56 group-hover:h-56 opacity-10"></span>
+              <span class="relative flex items-center gap-2">Explore Programs <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+            </a>
+            <a href="#contact" class="group inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 border-2 border-white/30 rounded-full hover:bg-white hover:text-[#226fb4]" data-i18n="hero_cta2">
+              Book Free Session
+            </a>
           </div>
 
-          <!-- Trust badges -->
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 stagger">
-            <div class="glass-card reveal p-3 text-center">
-              <div class="text-3xl mb-2" style="color: #10b981">
-                <i class="ph-duotone ph-plant"></i>
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 stagger">
+            <div class="glass-bento p-4 rounded-2xl flex flex-col items-center justify-center text-center group">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center bg-[#10b981]/20 mb-3 group-hover:scale-110 group-hover:bg-[#10b981] transition-all duration-300">
+                <i class="ph-duotone ph-plant text-xl text-[#10b981] group-hover:text-white transition-colors"></i>
               </div>
-              <div class="text-white text-xs font-semibold" data-i18n="badge1">
-                Positive Learning
-              </div>
+              <div class="text-white/90 text-xs font-bold leading-tight" data-i18n="badge1">Positive Learning</div>
             </div>
-            <div class="glass-card reveal p-3 text-center">
-              <div class="text-3xl mb-2" style="color: #f59e0b">
-                <i class="ph-duotone ph-medal"></i>
+            <div class="glass-bento p-4 rounded-2xl flex flex-col items-center justify-center text-center group">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center bg-[#f59e0b]/20 mb-3 group-hover:scale-110 group-hover:bg-[#f59e0b] transition-all duration-300">
+                <i class="ph-duotone ph-medal text-xl text-[#f59e0b] group-hover:text-white transition-colors"></i>
               </div>
-              <div class="text-white text-xs font-semibold" data-i18n="badge2">
-                Certified Trainers
-              </div>
+              <div class="text-white/90 text-xs font-bold leading-tight" data-i18n="badge2">Certified Trainers</div>
             </div>
-            <div class="glass-card reveal p-3 text-center">
-              <div class="text-3xl mb-2" style="color: #8b5cf6">
-                <i class="ph-duotone ph-palette"></i>
+            <div class="glass-bento p-4 rounded-2xl flex flex-col items-center justify-center text-center group">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center bg-[#8b5cf6]/20 mb-3 group-hover:scale-110 group-hover:bg-[#8b5cf6] transition-all duration-300">
+                <i class="ph-duotone ph-palette text-xl text-[#8b5cf6] group-hover:text-white transition-colors"></i>
               </div>
-              <div class="text-white text-xs font-semibold" data-i18n="badge3">
-                Interactive Activities
-              </div>
+              <div class="text-white/90 text-xs font-bold leading-tight" data-i18n="badge3">Interactive Activities</div>
             </div>
-            <div class="glass-card reveal p-3 text-center">
-              <div class="text-3xl mb-2" style="color: #3b82f6">
-                <i class="ph-duotone ph-users"></i>
+            <div class="glass-bento p-4 rounded-2xl flex flex-col items-center justify-center text-center group">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center bg-[#00d4ff]/20 mb-3 group-hover:scale-110 group-hover:bg-[#00d4ff] transition-all duration-300">
+                <i class="ph-duotone ph-users text-xl text-[#00d4ff] group-hover:text-white transition-colors"></i>
               </div>
-              <div class="text-white text-xs font-semibold" data-i18n="badge4">
-                Family-Focused
-              </div>
+              <div class="text-white/90 text-xs font-bold leading-tight" data-i18n="badge4">Family-Focused</div>
             </div>
           </div>
         </div>
 
-        <!-- RIGHT: Visual (Bento Box) -->
-        <div class="relative reveal-right hidden lg:block">
-          <div class="grid grid-cols-2 gap-4 max-w-lg mx-auto">
-            <!-- Large Card (Span 2) -->
-            <div class="col-span-2 glass-card p-6 flex flex-col items-center justify-center text-center overflow-hidden relative group" style="height: 240px; border-color: rgba(34, 111, 180, 0.4);">
-              <div class="absolute inset-0 bg-gradient-to-br from-[#1a5490]/40 to-transparent transition-opacity group-hover:opacity-70"></div>
+        <!-- RIGHT: Visual Bento Box (Col span 6) -->
+        <div class="lg:col-span-6 relative reveal-right hidden lg:block h-full">
+          <!-- Decorative abstract ring -->
+          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] rounded-full border border-white/10 border-dashed animate-spin-slow pointer-events-none"></div>
+          
+          <div class="grid grid-cols-2 gap-5 relative z-10 h-[500px]">
+            
+            <!-- Bento Item 1: Large Stat -->
+            <div class="glass-bento col-span-2 rounded-[2rem] p-8 flex flex-col justify-end relative overflow-hidden group">
+              <div class="absolute inset-0 bg-gradient-to-t from-[#f79002]/30 to-transparent opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
+              <!-- Floating graphic -->
+              <div class="absolute -right-4 -top-4 w-40 h-40 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
               
-              <!-- Decorative abstract shapes inside -->
-              <div class="absolute -right-8 -top-8 w-32 h-32 rounded-full mix-blend-overlay filter blur-xl opacity-50 transition-transform group-hover:scale-150" style="background: #f79002"></div>
-              <div class="absolute -left-8 -bottom-8 w-32 h-32 rounded-full mix-blend-overlay filter blur-xl opacity-50 transition-transform group-hover:scale-150" style="background: #00d4ff"></div>
-
-              <div class="relative z-10">
-                <div class="text-6xl font-black font-heading mb-2 grad-text">500+</div>
-                <div class="text-white text-xl font-semibold" data-i18n="stat1">Students Transformed</div>
-                <div class="text-white/60 text-sm mt-2">Across our specialized positive education programs.</div>
+              <div class="relative z-10 flex justify-between items-end">
+                <div>
+                  <div class="text-7xl font-black font-heading text-white tracking-tighter mb-2 leading-none flex items-end">
+                    500<span class="text-[#f79002]">+</span>
+                  </div>
+                  <div class="text-white text-xl font-bold" data-i18n="stat1">Students Transformed</div>
+                  <div class="text-white/70 text-sm mt-2 max-w-xs">Across our specialized positive education programs.</div>
+                </div>
+                <div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center mb-4 border border-white/30 group-hover:bg-white group-hover:text-[#f79002] transition-colors duration-500">
+                  <i class="ph-bold ph-trend-up text-3xl"></i>
+                </div>
               </div>
             </div>
 
-            <!-- Small Card 1 -->
-            <div class="glass-card p-5 flex flex-col items-start justify-between relative overflow-hidden group" style="height: 180px; background: rgba(247, 144, 2, 0.1); border-color: rgba(247, 144, 2, 0.3);">
-              <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-20"></div>
-              <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 relative z-10" style="background: rgba(247, 144, 2, 0.2);">
-                <i class="ph-duotone ph-star text-2xl text-orange-DEFAULT"></i>
-              </div>
-              <div class="relative z-10">
-                <div class="text-4xl font-black font-heading text-white mb-1">4.9</div>
-                <div class="text-white/70 text-xs font-bold uppercase tracking-widest" data-i18n="stat3">Parent Rating</div>
-              </div>
-            </div>
-
-            <!-- Small Card 2 -->
-            <div class="glass-card p-5 flex flex-col items-start justify-between relative overflow-hidden group" style="height: 180px; background: rgba(34, 111, 180, 0.2); border-color: rgba(34, 111, 180, 0.4);">
-              <!-- Abstract ring decoration -->
-              <div class="absolute -bottom-6 -right-6 w-24 h-24 rounded-full border-4 border-white/10 transition-transform duration-500 group-hover:scale-125"></div>
+            <!-- Bento Item 2: Rating -->
+            <div class="glass-bento rounded-[2rem] p-6 flex flex-col justify-between relative overflow-hidden group">
+              <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
               
-              <div class="w-12 h-12 rounded-full flex items-center justify-center mb-4 transition-transform duration-500 group-hover:scale-110 relative z-10" style="background: rgba(34, 111, 180, 0.4);">
-                <i class="ph-duotone ph-student text-2xl text-white"></i>
+              <div class="flex justify-between items-start relative z-10">
+                <div class="w-12 h-12 rounded-2xl bg-[#00d4ff]/20 flex items-center justify-center border border-[#00d4ff]/30 group-hover:rotate-12 transition-transform">
+                  <i class="ph-fill ph-star text-2xl text-[#00d4ff]"></i>
+                </div>
+                <div class="flex gap-1">
+                  <i class="ph-fill ph-star text-[#f79002] text-sm drop-shadow-md"></i>
+                  <i class="ph-fill ph-star text-[#f79002] text-sm drop-shadow-md"></i>
+                  <i class="ph-fill ph-star text-[#f79002] text-sm drop-shadow-md"></i>
+                  <i class="ph-fill ph-star text-[#f79002] text-sm drop-shadow-md"></i>
+                  <i class="ph-fill ph-star text-[#f79002] text-sm drop-shadow-md"></i>
+                </div>
               </div>
-              <div class="relative z-10">
-                <div class="text-4xl font-black font-heading text-white mb-1">8</div>
-                <div class="text-white/70 text-xs font-bold uppercase tracking-widest" data-i18n="stat2">Expert Programs</div>
+              
+              <div class="relative z-10 mt-8">
+                <div class="text-5xl font-black font-heading text-white mb-1 tracking-tight">4.9</div>
+                <div class="text-[#00d4ff] text-xs font-black uppercase tracking-widest" data-i18n="stat3">Parent Rating</div>
               </div>
             </div>
+
+            <!-- Bento Item 3: Programs -->
+            <div class="glass-bento rounded-[2rem] p-6 flex flex-col justify-between relative overflow-hidden group">
+              <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-[#f79002]/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-500"></div>
+              
+              <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 relative z-10 group-hover:-translate-y-2 transition-transform">
+                <i class="ph-duotone ph-books text-2xl text-white"></i>
+              </div>
+              
+              <div class="relative z-10 mt-8">
+                <div class="text-5xl font-black font-heading text-white mb-1 tracking-tight">8</div>
+                <div class="text-white/80 text-xs font-black uppercase tracking-widest" data-i18n="stat2">Expert Programs</div>
+              </div>
+            </div>
+
           </div>
         </div>
+        
       </div>
     </div>
 
-    <!-- Curve -->
-    <div class="curve-bottom">
-      <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <!-- Bottom Curve matching next section bg -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20">
+      <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-16 block">
         <path d="M0,60 Q360,0 720,40 Q1080,80 1440,20 L1440,60 Z" fill="#f8f9fc" />
       </svg>
     </div>
@@ -522,7 +548,7 @@
      REGISTRATION / CONTACT FORM
 ══════════════════════════════════════════════════ -->
   <section id="contact" class="section-pad bg-pattern" style="background-color: #f0f5fb">
-    <div class="max-w-4xl mx-auto px-6">
+    <div class="max-w-4xl mx-auto px-3">
       <div class="text-center mb-12 reveal">
         <div class="section-label" data-i18n="form_label">✦ Join Us</div>
         <h2 class="font-heading text-4xl lg:text-5xl font-black leading-tight mt-3" style="color: #226fb4">
@@ -925,16 +951,19 @@
   <!-- ══════════════════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════════════ -->
-  <footer id="footer" class="site-footer relative overflow-hidden" aria-label="Site footer">
-    <!-- SVG Transition Curve from previous section -->
+  <footer id="footer" class="site-footer relative bg-[#226fb4] overflow-hidden" aria-label="Site footer">
+    <!-- Top Transition Curve from previous section -->
     <div class="absolute top-0 left-0 w-full overflow-hidden leading-none z-10">
       <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full h-12 relative block" style="transform: rotate(180deg);">
-        <path d="M0,60 Q360,0 720,40 Q1080,80 1440,20 L1440,60 Z" fill="#f8f9fc" />
+        <path d="M0,60 Q360,0 720,40 Q1080,80 1440,20 L1440,60 Z" fill="#f0f5fb" />
       </svg>
     </div>
 
-    <!-- Decorative Watermark Logo -->
-    <div class="absolute bottom-[-10%] right-[-5%] text-[#ffffff06] font-heading font-black text-[30rem] leading-none select-none pointer-events-none z-0">
+    <!-- Decorative Watermark Logo & Orbs -->
+    <div class="absolute top-[20%] right-[-10%] w-[500px] h-[500px] rounded-full mix-blend-screen filter blur-[150px] opacity-30 pointer-events-none z-0" style="background: radial-gradient(circle, #f79002 0%, transparent 70%);"></div>
+    <div class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full mix-blend-screen filter blur-[100px] opacity-20 pointer-events-none z-0" style="background: radial-gradient(circle, #00d4ff 0%, transparent 70%);"></div>
+    
+    <div class="absolute bottom-[-5%] right-[-5%] text-white/5 font-heading font-black text-[35rem] leading-none select-none pointer-events-none z-0">
       B
     </div>
 
@@ -950,7 +979,7 @@
                 <div class="w-16 h-16 rounded-2xl flex items-center justify-center font-heading font-black text-3xl" style="background: linear-gradient(135deg, #f79002, #ffb340); box-shadow: 0 10px 30px rgba(247, 144, 2, 0.3);">
                   <span style="color: #fff">B</span>
                 </div>
-                <div class="absolute -bottom-2 -right-2 w-8 h-8 rounded-xl flex items-center justify-center text-sm font-black" style="background: #226fb4; color: #fff; box-shadow: 0 4px 12px rgba(34, 111, 180, 0.3);">
+                <div class="absolute -bottom-2 -right-2 w-8 h-8 rounded-xl flex items-center justify-center text-sm font-black border-2 border-[#226fb4]" style="background: white; color: #226fb4; box-shadow: 0 4px 12px rgba(34, 111, 180, 0.3);">
                   G
                 </div>
               </div>
@@ -960,28 +989,28 @@
               </div>
             </div>
             
-            <p class="text-white/60 leading-relaxed text-lg mb-10 max-w-md font-light" data-i18n="footer_desc">
+            <p class="text-white/80 leading-relaxed text-lg mb-10 max-w-md font-light" data-i18n="footer_desc">
               Empowering children &amp; teenagers to discover their potential through positive, interactive, and emotionally intelligent education.
             </p>
 
-            <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-[#f79002]/10 border border-[#f79002]/20 mb-10 transition-transform hover:scale-105">
-              <i class="ph-duotone ph-shooting-star text-[#f79002] text-xl"></i>
-              <span class="text-[#f79002] text-xs font-black tracking-widest uppercase">ACT TO IMPACT</span>
+            <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/10 border border-white/20 mb-10 backdrop-blur-md">
+              <i class="ph-fill ph-shooting-star text-[#f79002] text-xl"></i>
+              <span class="text-white text-xs font-black tracking-widest uppercase">ACT TO IMPACT</span>
             </div>
           </div>
 
           <!-- Social Links -->
           <div class="flex gap-4">
-            <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white/70 hover:bg-[#f79002] hover:text-white hover:-translate-y-1 transition-all duration-300" aria-label="Instagram">
+            <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center bg-white/10 border border-white/20 text-white hover:bg-[#f79002] hover:border-transparent hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(247,144,2,0.4)] transition-all duration-300" aria-label="Instagram">
               <i class="ph-fill ph-instagram-logo text-xl"></i>
             </a>
-            <a href="https://wa.me/96594144615" target="_blank" class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white/70 hover:bg-[#25D366] hover:text-white hover:-translate-y-1 transition-all duration-300" aria-label="WhatsApp">
+            <a href="https://wa.me/96594144615" target="_blank" class="w-12 h-12 rounded-full flex items-center justify-center bg-white/10 border border-white/20 text-white hover:bg-[#25D366] hover:border-transparent hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(37,211,102,0.4)] transition-all duration-300" aria-label="WhatsApp">
               <i class="ph-fill ph-whatsapp-logo text-xl"></i>
             </a>
-            <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white/70 hover:bg-[#000000] hover:text-white hover:-translate-y-1 transition-all duration-300" aria-label="X">
+            <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center bg-white/10 border border-white/20 text-white hover:bg-[#000000] hover:border-transparent hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,0,0,0.4)] transition-all duration-300" aria-label="X">
               <i class="ph-fill ph-x-logo text-xl"></i>
             </a>
-            <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white/70 hover:bg-[#ff0050] hover:text-white hover:-translate-y-1 transition-all duration-300" aria-label="TikTok">
+            <a href="#" class="w-12 h-12 rounded-full flex items-center justify-center bg-white/10 border border-white/20 text-white hover:bg-[#ff0050] hover:border-transparent hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,0,80,0.4)] transition-all duration-300" aria-label="TikTok">
               <i class="ph-fill ph-tiktok-logo text-xl"></i>
             </a>
           </div>
@@ -994,53 +1023,63 @@
           <div>
             <h4 class="text-white font-heading font-bold text-lg mb-6 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-0.5 after:bg-[#f79002]" data-i18n="footer_links">Quick Links</h4>
             <ul class="space-y-4">
-              <li><a href="#" class="text-white/60 hover:text-[#f79002] hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_home">Home</a></li>
-              <li><a href="#about" class="text-white/60 hover:text-[#f79002] hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_about">About</a></li>
-              <li><a href="#programs" class="text-white/60 hover:text-[#f79002] hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_programs">Programs</a></li>
-              <li><a href="#pricing" class="text-white/60 hover:text-[#f79002] hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_packages">Packages</a></li>
-              <li><a href="#testimonials" class="text-white/60 hover:text-[#f79002] hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_testimonials">Testimonials</a></li>
-              <li><a href="#contact" class="text-white/60 hover:text-[#f79002] hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_contact">Contact</a></li>
+              <li><a href="#" class="text-white/70 hover:text-white hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_home">Home</a></li>
+              <li><a href="#about" class="text-white/70 hover:text-white hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_about">About</a></li>
+              <li><a href="#programs" class="text-white/70 hover:text-white hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_programs">Programs</a></li>
+              <li><a href="#pricing" class="text-white/70 hover:text-white hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_packages">Packages</a></li>
+              <li><a href="#testimonials" class="text-white/70 hover:text-white hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_testimonials">Testimonials</a></li>
+              <li><a href="#contact" class="text-white/70 hover:text-white hover:translate-x-1 inline-block transition-all duration-300" data-i18n="nav_contact">Contact</a></li>
             </ul>
           </div>
 
           <!-- Programs -->
           <div>
-            <h4 class="text-white font-heading font-bold text-lg mb-6 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-0.5 after:bg-[#f79002]" data-i18n="nav_programs">Programs</h4>
+            <h4 class="text-white font-heading font-bold text-lg mb-6 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-0.5 after:bg-[#00d4ff]" data-i18n="nav_programs">Programs</h4>
             <ul class="space-y-4" id="footer-programs">
-              <!-- Dynamically populated by JS -->
+              <!-- Dynamically populated by JS, ensure text-white/70 and hover:text-white in JS -->
             </ul>
           </div>
 
           <!-- Contact -->
           <div>
-            <h4 class="text-white font-heading font-bold text-lg mb-6 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-0.5 after:bg-[#f79002]" data-i18n="nav_contact">Contact</h4>
+            <h4 class="text-white font-heading font-bold text-lg mb-6 relative inline-block after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-1/2 after:h-0.5 after:bg-[#10b981]" data-i18n="nav_contact">Contact</h4>
             <ul class="space-y-5">
-              <li class="flex items-start gap-3">
-                <i class="ph-duotone ph-map-pin text-[#f79002] text-xl mt-0.5"></i>
-                <span class="text-white/70 text-sm leading-relaxed" data-i18n="footer_addr">Kuwait City, Kuwait</span>
+              <li class="flex items-start gap-3 group">
+                <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#f79002] transition-colors">
+                  <i class="ph-duotone ph-map-pin text-white text-lg"></i>
+                </div>
+                <span class="text-white/80 text-sm leading-relaxed mt-1" data-i18n="footer_addr">Kuwait City, Kuwait</span>
               </li>
-              <li class="flex items-start gap-3">
-                <i class="ph-duotone ph-phone text-[#f79002] text-xl mt-0.5"></i>
-                <span class="text-white/70 text-sm leading-relaxed" dir="ltr">+965 9414 4615</span>
+              <li class="flex items-start gap-3 group">
+                <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#f79002] transition-colors">
+                  <i class="ph-duotone ph-phone text-white text-lg"></i>
+                </div>
+                <span class="text-white/80 text-sm leading-relaxed mt-1" dir="ltr">+965 9414 4615</span>
               </li>
-              <li class="flex items-start gap-3">
-                <i class="ph-duotone ph-envelope-simple text-[#f79002] text-xl mt-0.5"></i>
-                <span class="text-white/70 text-sm leading-relaxed">info@bgenius.academy</span>
+              <li class="flex items-start gap-3 group">
+                <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#f79002] transition-colors">
+                  <i class="ph-duotone ph-envelope-simple text-white text-lg"></i>
+                </div>
+                <span class="text-white/80 text-sm leading-relaxed mt-1">info@bgenius.academy</span>
               </li>
-              <li class="flex items-start gap-3">
-                <i class="ph-duotone ph-clock text-[#f79002] text-xl mt-0.5"></i>
-                <span class="text-white/70 text-sm leading-relaxed" data-i18n="footer_hours">Sun–Thu: 9AM – 8PM</span>
+              <li class="flex items-start gap-3 group">
+                <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-[#f79002] transition-colors">
+                  <i class="ph-duotone ph-clock text-white text-lg"></i>
+                </div>
+                <span class="text-white/80 text-sm leading-relaxed mt-1" data-i18n="footer_hours">Sun–Thu: 9AM – 8PM</span>
               </li>
             </ul>
 
             <!-- Floating CTA -->
-            <a href="#contact" class="block mt-8 p-6 rounded-2xl relative overflow-hidden group cursor-pointer" style="background: linear-gradient(135deg, rgba(34, 111, 180, 0.2), rgba(34, 111, 180, 0.05)); border: 1px solid rgba(34, 111, 180, 0.3); text-decoration: none;">
-              <div class="absolute inset-0 bg-[#226fb4] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-0"></div>
+            <a href="#contact" class="block mt-10 p-6 rounded-2xl relative overflow-hidden group cursor-pointer border border-white/20 glass-bento">
+              <div class="absolute inset-0 bg-gradient-to-r from-[#f79002] to-[#d97800] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out z-0"></div>
               <div class="relative z-10">
-                <div class="text-[#f79002] text-xs font-bold uppercase tracking-widest mb-2 group-hover:text-white/80 transition-colors" data-i18n="footer_cta_label">Ready to start?</div>
+                <div class="text-[#00d4ff] group-hover:text-white/80 text-xs font-bold uppercase tracking-widest mb-2 transition-colors duration-500" data-i18n="footer_cta_label">Ready to start?</div>
                 <div class="text-white font-heading font-black text-xl flex items-center justify-between" data-i18n="nav_cta">
                   Book Free Session
-                  <i class="ph-bold ph-arrow-right transform group-hover:translate-x-2 transition-transform"></i>
+                  <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-[#f79002] transition-colors duration-500">
+                    <i class="ph-bold ph-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                  </div>
                 </div>
               </div>
             </a>
@@ -1050,12 +1089,12 @@
 
       <!-- Footer Bottom -->
       <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-white/10">
-        <div class="text-white/40 text-sm" data-i18n="footer_copy">
+        <div class="text-white/50 text-sm" data-i18n="footer_copy">
           &copy; 2025 B-Genius Academy. All rights reserved.
         </div>
         <div class="flex gap-6">
-          <a href="#" class="text-white/40 hover:text-[#f79002] text-sm transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
-          <a href="#" class="text-white/40 hover:text-[#f79002] text-sm transition-colors" data-i18n="footer_terms">Terms of Service</a>
+          <a href="#" class="text-white/50 hover:text-white text-sm transition-colors" data-i18n="footer_privacy">Privacy Policy</a>
+          <a href="#" class="text-white/50 hover:text-white text-sm transition-colors" data-i18n="footer_terms">Terms of Service</a>
         </div>
       </div>
     </div>
