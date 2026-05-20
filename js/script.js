@@ -614,9 +614,25 @@ function submitForm() {
 /* ────────────────────────────────────────────────
    NAVBAR SCROLL
 ──────────────────────────────────────────────── */
+let lastScrollY = window.scrollY;
+let ticking = false;
+
 window.addEventListener('scroll', () => {
+  const currentY = window.scrollY;
   const nav = document.getElementById('navbar');
-  nav.classList.toggle('scrolled', window.scrollY > 50);
+
+  if (!nav) return;
+
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      const isScrollingDown = currentY > lastScrollY && currentY > 100;
+      nav.classList.toggle('scrolled', currentY > 50);
+      nav.classList.toggle('nav-hidden', isScrollingDown);
+      lastScrollY = currentY;
+      ticking = false;
+    });
+    ticking = true;
+  }
 });
 
 /* ────────────────────────────────────────────────

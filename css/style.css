@@ -524,6 +524,12 @@ h4,
   color: #fff;
 }
 
+#navbar.nav-hidden {
+  transform: translateX(-50%) translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* ── HERO (Aurora Mesh Background) ─────────────────────── */
 #hero {
   min-height: 100vh;
