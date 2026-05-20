@@ -81,6 +81,7 @@ const i18n = {
     cta_btn1: 'Book Free Consultation', cta_btn2: 'View All Programs',
     cta_stat1: 'Children Transformed', cta_stat2: 'Expert Programs', cta_stat3: 'Parent Satisfaction', cta_stat4: 'Years of Excellence',
     footer_links: 'Quick Links',
+    footer_programs: 'Programs',
     footer_desc: 'Empowering children and teenagers to discover their potential through positive, interactive, and emotionally intelligent education.',
     footer_addr: 'Kuwait City, Kuwait', footer_hours: 'Sun–Thu: 9AM – 8PM',
     footer_copy: '© 2025 B-Genius Academy. All rights reserved.',
@@ -169,6 +170,7 @@ const i18n = {
     cta_btn1: 'احجز استشارة مجانية', cta_btn2: 'عرض جميع البرامج',
     cta_stat1: 'طفل تحوّل', cta_stat2: 'برنامج متخصص', cta_stat3: 'رضا الأهالي', cta_stat4: 'سنوات التميّز',
     footer_links: 'روابط سريعة',
+    footer_programs: 'البرامج',
     footer_desc: 'نمكّن الأطفال والمراهقين من اكتشاف إمكاناتهم من خلال تعليم إيجابي وتفاعلي وذكي عاطفياً.',
     footer_addr: 'مدينة الكويت، الكويت', footer_hours: 'الأحد–الخميس: 9 صباحاً – 8 مساءً',
     footer_copy: '© 2025 أكاديمية بي جينيس. جميع الحقوق محفوظة.',
@@ -207,11 +209,11 @@ function setLang(lang) {
   const t = i18n[lang];
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) el.innerHTML = t[key];
+    if (t[key] !== undefined) el.textContent = t[key];
   });
   document.querySelectorAll('[data-i18n-m]').forEach(el => {
     const key = el.getAttribute('data-i18n-m');
-    if (t[key] !== undefined) el.innerHTML = t[key];
+    if (t[key] !== undefined) el.textContent = t[key];
   });
   document.querySelectorAll('[data-i18n-ph]').forEach(el => {
     const key = el.getAttribute('data-i18n-ph');
