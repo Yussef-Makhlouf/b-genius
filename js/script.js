@@ -79,8 +79,29 @@ const i18n = {
     cta_h2a: 'Let\'s Build Their', cta_h2b: 'Future Together.',
     cta_sub: 'One free consultation. Infinite possibilities. Book today and discover which program is the perfect fit for your child.',
     cta_btn1: 'Book Free Consultation', cta_btn2: 'View All Programs',
-    cta_stat1: 'Children Transformed', cta_stat2: 'Expert Programs', cta_stat3: 'Parent Satisfaction', cta_stat4: 'Years of Excellence',
+    cta_stat1: 'Children Transformed', cta_stat2: 'Expert Programs', cta_stat3: 'Parent Satisfaction',     cta_stat4: 'Years of Excellence',
+    f_fullname: 'Full Name', ph_fullname: 'Student\'s full name',
+    f_gender: 'Gender', sel_gender: 'Select gender', opt_male: 'Male', opt_female: 'Female',
+    f_dob: 'Date of Birth',
+    f_nationality: 'Nationality', ph_nationality: 'e.g. Kuwaiti',
+    f_interested: 'Interested in', ph_monthly: 'Monthly package',
+    ph_summer: 'Summer camp', ph_individual: 'Individual sessions',
+    ph_workshops: 'Workshops', ph_english: 'English courses',
+    f_message: 'Message', ph_message_ph: 'Write your message here...',
+    terms_text: 'I agree to the Terms & Conditions and Privacy Policy of B-Genius Academy. I confirm that all information provided is accurate.',
+    submit_btn: 'Submit Registration',
+    err_required_fullname: 'Full name is required.',
+    err_required_gender: 'Please select your gender.',
+    err_required_dob: 'Date of birth is required.',
+    err_future_dob: 'Date of birth cannot be in the future.',
+    err_required_nationality: 'Nationality is required.',
+    err_required_interest: 'Please select at least one area of interest.',
+    err_required_terms: 'You must agree to the terms to continue.',
+    err_submission_failed: 'Submission failed. Please fix the highlighted fields.',
+    toast_submitting: 'Submitting registration…',
+    toast_submitted: 'Registration submitted successfully!',
     footer_links: 'Quick Links',
+
     footer_programs: 'Programs',
     footer_desc: 'Empowering children and teenagers to discover their potential through positive, interactive, and emotionally intelligent education.',
     footer_addr: 'Kuwait City, Kuwait', footer_hours: 'Sun–Thu: 9AM – 8PM',
@@ -168,8 +189,29 @@ const i18n = {
     cta_h2a: 'لنبني مستقبلهم', cta_h2b: 'معاً.',
     cta_sub: 'استشارة مجانية واحدة. إمكانات لا حدود لها. احجز اليوم واكتشف البرنامج المثالي لطفلك.',
     cta_btn1: 'احجز استشارة مجانية', cta_btn2: 'عرض جميع البرامج',
-    cta_stat1: 'طفل تحوّل', cta_stat2: 'برنامج متخصص', cta_stat3: 'رضا الأهالي', cta_stat4: 'سنوات التميّز',
+    cta_stat1: 'طفل تحوّل', cta_stat2: 'برنامج متخصص', cta_stat3: 'رضا الأهالي',     cta_stat4: 'سنوات التميّز',
+    f_fullname: 'الاسم الكامل', ph_fullname: 'اسم الطالب كاملاً',
+    f_gender: 'الجنس', sel_gender: 'اختر الجنس', opt_male: 'ذكر', opt_female: 'أنثى', opt_other: 'أخرى',
+    f_dob: 'تاريخ الميلاد',
+    f_nationality: 'الجنسية', ph_nationality: 'مثال: كويتي',
+    f_interested: 'مهتم بـ', ph_monthly: 'باقة شهرية',
+    ph_summer: 'مخيم صيفي', ph_individual: 'جلسات فردية',
+    ph_workshops: 'ورش عمل', ph_english: 'دورات إنجليزية',
+    f_message: 'الرسالة', ph_message_ph: 'اكتب رسالتك هنا...',
+    terms_text: 'أوافق على الشروط والأحكام وسياسة الخصوصية لأكاديمية بي جينيس. أؤكد أن جميع المعلومات المقدمة دقيقة.',
+    submit_btn: 'إرسال طلب التسجيل',
+    err_required_fullname: 'يرجى إدخال الاسم الكامل.',
+    err_required_gender: 'يرجى اختيار الجنس.',
+    err_required_dob: 'يرجى إدخال تاريخ الميلاد.',
+    err_future_dob: 'لا يمكن أن يكون تاريخ الميلاد في المستقبل.',
+    err_required_nationality: 'يرجى إدخال الجنسية.',
+    err_required_interest: 'يرجى اختيار مجال واحد على الأقل من الاهتمامات.',
+    err_required_terms: 'يجب الموافقة على الشروط للمتابعة.',
+    err_submission_failed: 'فشل الإرسال. يرجى تصحيح الحقول المحددة.',
+    toast_submitting: 'جاري إرسال طلب التسجيل…',
+    toast_submitted: 'تم إرسال طلب التسجيل بنجاح!',
     footer_links: 'روابط سريعة',
+
     footer_programs: 'البرامج',
     footer_desc: 'نمكّن الأطفال والمراهقين من اكتشاف إمكاناتهم من خلال تعليم إيجابي وتفاعلي وذكي عاطفياً.',
     footer_addr: 'مدينة الكويت، الكويت', footer_hours: 'الأحد–الخميس: 9 صباحاً – 8 مساءً',
@@ -650,7 +692,8 @@ function showToast(message, type = 'success') {
 
 function submitForm() {
   clearValidation();
-  showToast('Submitting registration…', 'pending');
+  const t = i18n[currentLang];
+  showToast(t.toast_submitting, 'pending');
 
   const fullname = document.getElementById('fullname');
   const gender = document.getElementById('gender');
@@ -662,44 +705,44 @@ function submitForm() {
   let isValid = true;
 
   if (!fullname?.value.trim()) {
-    setFieldError(fullname, 'Full name is required.');
+    setFieldError(fullname, t.err_required_fullname);
     isValid = false;
   }
 
   if (!gender?.value) {
-    setFieldError(gender, 'Please select your gender.');
+    setFieldError(gender, t.err_required_gender);
     isValid = false;
   }
 
   if (!dob?.value) {
-    setFieldError(dob, 'Date of birth is required.');
+    setFieldError(dob, t.err_required_dob);
     isValid = false;
   } else if (new Date(dob.value) > new Date()) {
-    setFieldError(dob, 'Date of birth cannot be in the future.');
+    setFieldError(dob, t.err_future_dob);
     isValid = false;
   }
 
   if (!nationality?.value.trim()) {
-    setFieldError(nationality, 'Nationality is required.');
+    setFieldError(nationality, t.err_required_nationality);
     isValid = false;
   }
 
   if (interestedOptions.length === 0) {
     const interestedError = document.getElementById('interested-error');
     const interestGroup = document.getElementById('interested');
-    if (interestedError) interestedError.textContent = 'Please select at least one area of interest.';
+    if (interestedError) interestedError.textContent = t.err_required_interest;
     if (interestGroup) interestGroup.classList.add('fieldset-invalid');
     isValid = false;
   }
 
   if (!terms?.checked) {
     const termsError = document.getElementById('terms-error');
-    if (termsError) termsError.textContent = 'You must agree to the terms to continue.';
+    if (termsError) termsError.textContent = t.err_required_terms;
     isValid = false;
   }
 
   if (!isValid) {
-    showToast('Submission failed. Please fix the highlighted fields.', 'error');
+    showToast(t.err_submission_failed, 'error');
     const firstError = document.querySelector('.field-error:not(:empty)');
     if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
@@ -708,7 +751,7 @@ function submitForm() {
   const pendingToast = document.querySelector('.toast--pending');
   if (pendingToast) pendingToast.remove();
 
-  showToast('Registration submitted successfully!', 'success');
+  showToast(t.toast_submitted, 'success');
 
   window.setTimeout(() => {
     const step1 = document.getElementById('step-1');
