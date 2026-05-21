@@ -467,16 +467,13 @@ function renderDaysCheckboxes() {
 }
 
 /* ────────────────────────────────────────────────
-   MULTI-STEP FORM
+   SINGLE STEP FORM
 ──────────────────────────────────────────────── */
 let currentStep = 1;
-const totalSteps = 4;
+const totalSteps = 1;
 
 const stepMeta = {
   1: { titleKey: 'step1_title', subKey: 'step1_sub' },
-  2: { titleKey: 'step2_title', subKey: 'step2_sub' },
-  3: { titleKey: 'step3_title', subKey: 'step3_sub' },
-  4: { titleKey: 'step4_title', subKey: 'step4_sub' },
 };
 
 function renderProgressBar() {
@@ -593,22 +590,134 @@ function buildReview() {
   `;
 }
 
+function clearValidation() {
+  document.querySelectorAll('.field-error').forEach(el => el.textContent = '');
+  document.querySelectorAll('.invalid').forEach(el => el.classList.remove('invalid'));
+  const interestGroup = document.getElementById('interested');
+  if (interestGroup) interestGroup.classList.remove('fieldset-invalid');
+  const termsError = document.getElementById('terms-error');
+  if (termsError) termsError.textContent = '';
+}
+
+function setFieldError(element, message) {
+  if (!element) return;
+  const errorId = `${element.id}-error`;
+  const errorEl = document.getElementById(errorId);
+  if (errorEl) errorEl.textContent = message;
+  element.classList.add('invalid');
+}
+
+function createToast(message, type = 'success', duration = 4000) {
+  const container = document.getElementById('toast-container') || document.body.appendChild(document.createElement('div'));
+  if (!container.id) container.id = 'toast-container';
+
+  const toast = document.createElement('div');
+  toast.className = `toast toast--${type}`;
+
+  const icon = document.createElement('div');
+  icon.className = 'toast__icon';
+  icon.innerHTML = {
+    success: '✓',
+    error: '✕',
+    pending: '…'
+  }[type] || 'i';
+
+  const text = document.createElement('div');
+  text.className = 'toast__message';
+  text.textContent = message;
+
+  toast.appendChild(icon);
+  toast.appendChild(text);
+  container.appendChild(toast);
+
+  if (type !== 'pending') {
+    window.setTimeout(() => {
+      toast.style.animation = 'toastOut 0.24s ease forwards';
+      toast.addEventListener('animationend', () => toast.remove());
+    }, duration);
+  }
+
+  return toast;
+}
+
+function showToast(message, type = 'success') {
+  const existing = document.querySelector('.toast--pending');
+  if (existing && type !== 'pending') {
+    existing.remove();
+  }
+  return createToast(message, type);
+}
+
 function submitForm() {
+  clearValidation();
+  showToast('Submitting registration…', 'pending');
+
+  const fullname = document.getElementById('fullname');
+  const gender = document.getElementById('gender');
+  const dob = document.getElementById('dob');
+  const nationality = document.getElementById('nationality');
+  const interestedOptions = document.querySelectorAll('input[name="interested[]"]:checked');
   const terms = document.getElementById('terms');
+
+  let isValid = true;
+
+  if (!fullname?.value.trim()) {
+    setFieldError(fullname, 'Full name is required.');
+    isValid = false;
+  }
+
+  if (!gender?.value) {
+    setFieldError(gender, 'Please select your gender.');
+    isValid = false;
+  }
+
+  if (!dob?.value) {
+    setFieldError(dob, 'Date of birth is required.');
+    isValid = false;
+  } else if (new Date(dob.value) > new Date()) {
+    setFieldError(dob, 'Date of birth cannot be in the future.');
+    isValid = false;
+  }
+
+  if (!nationality?.value.trim()) {
+    setFieldError(nationality, 'Nationality is required.');
+    isValid = false;
+  }
+
+  if (interestedOptions.length === 0) {
+    const interestedError = document.getElementById('interested-error');
+    const interestGroup = document.getElementById('interested');
+    if (interestedError) interestedError.textContent = 'Please select at least one area of interest.';
+    if (interestGroup) interestGroup.classList.add('fieldset-invalid');
+    isValid = false;
+  }
+
   if (!terms?.checked) {
-    const msg = currentLang === 'ar' ? 'يرجى الموافقة على الشروط والأحكام أولاً.' : 'Please agree to the Terms & Conditions first.';
-    alert(msg);
+    const termsError = document.getElementById('terms-error');
+    if (termsError) termsError.textContent = 'You must agree to the terms to continue.';
+    isValid = false;
+  }
+
+  if (!isValid) {
+    showToast('Submission failed. Please fix the highlighted fields.', 'error');
+    const firstError = document.querySelector('.field-error:not(:empty)');
+    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
-  // Hide all steps
-  for (let i = 1; i <= totalSteps; i++) {
-    const panel = document.getElementById(`step-${i}`);
-    if (panel) panel.classList.remove('active');
-  }
-  // Show success
-  const success = document.getElementById('step-success');
-  if (success) success.classList.add('active');
-  document.getElementById('form-nav').style.display = 'none';
+
+  const pendingToast = document.querySelector('.toast--pending');
+  if (pendingToast) pendingToast.remove();
+
+  showToast('Registration submitted successfully!', 'success');
+
+  window.setTimeout(() => {
+    const step1 = document.getElementById('step-1');
+    if (step1) step1.classList.remove('active');
+    const success = document.getElementById('step-success');
+    if (success) success.classList.add('active');
+    const formNav = document.getElementById('form-nav');
+    if (formNav) formNav.style.display = 'none';
+  }, 500);
 }
 
 /* ────────────────────────────────────────────────
@@ -668,6 +777,25 @@ function observeReveal() {
 document.addEventListener('DOMContentLoaded', () => {
   setLang(currentLang);
   observeReveal();
+
+  const formFields = document.querySelectorAll('#reg-form input, #reg-form select, #reg-form textarea');
+  formFields.forEach(field => {
+    field.addEventListener('input', () => {
+      field.classList.remove('invalid');
+      const error = document.getElementById(`${field.id}-error`);
+      if (error) error.textContent = '';
+      if (field.name === 'interested[]') {
+        const interestGroup = document.getElementById('interested');
+        if (interestGroup) interestGroup.classList.remove('fieldset-invalid');
+        const interestedError = document.getElementById('interested-error');
+        if (interestedError) interestedError.textContent = '';
+      }
+      if (field.id === 'terms') {
+        const termsError = document.getElementById('terms-error');
+        if (termsError) termsError.textContent = '';
+      }
+    });
+  });
 
   // Auto-start carousel timer
   slideTimer = setTimeout(nextSlide, 5000);

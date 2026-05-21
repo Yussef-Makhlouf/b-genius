@@ -531,15 +531,15 @@
               decoding="async"
             />
           </div>
-          <div class="flex items-center justify-center gap-0 relative z-10" id="progress-bar">
-            <!-- Injected by JS -->
+          <div class="flex items-center justify-center gap-0 relative z-10" id="progress-bar" style="display:none">
+            <!-- Single-step form: no progress shown -->
           </div>
           <div class="text-center mt-4 relative z-10">
             <div class="text-white font-heading font-bold text-lg" id="step-title" data-i18n="step1_title">
-              Student Information
+              Registration
             </div>
             <div class="text-white/50 text-sm mt-1" id="step-subtitle" data-i18n="step1_sub">
-              Step 1 of 4
+              Please complete the registration below.
             </div>
           </div>
         </div>
@@ -547,82 +547,70 @@
         <!-- Form body -->
         <div style="padding: 2.5rem">
           <form id="reg-form" onsubmit="return false;">
-            <!-- STEP 1: Student Info -->
+            <!-- STEP 1: Registration Basic Info -->
             <div class="step-panel active" id="step-1">
               <div class="grid md:grid-cols-2 gap-5">
                 <div class="md:col-span-2">
-                  <label class="form-label" for="fullname" data-i18n="f_fullname">Full Name</label>
-                  <input type="text" class="form-input" id="fullname" name="fullname" placeholder="Student's full name"
-                    data-i18n-ph="ph_fullname" required />
+                  <label class="form-label" for="fullname">Full Name</label>
+                  <input type="text" class="form-input" id="fullname" name="fullname" placeholder="Full name" required />
+                  <div class="field-error" id="fullname-error" aria-live="polite"></div>
                 </div>
+
                 <div>
-                  <label class="form-label" for="gender" data-i18n="f_gender">Gender</label>
+                  <label class="form-label" for="gender">Gender</label>
                   <select class="form-select" id="gender" name="gender" required>
-                    <option value="" data-i18n="sel_gender">
-                      Select gender
-                    </option>
-                    <option value="male" data-i18n="opt_male">Male</option>
-                    <option value="female" data-i18n="opt_female">
-                      Female
-                    </option>
+                    <option value="">Select gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
                   </select>
+                  <div class="field-error" id="gender-error" aria-live="polite"></div>
                 </div>
+
                 <div>
-                  <label class="form-label" for="dob" data-i18n="f_dob">Date of Birth</label>
-                  <input type="date" class="form-input" id="dob" name="dob" required onclick="
-                        try {
-                          this.showPicker();
-                        } catch (e) {}
-                      " style="cursor: pointer" />
+                  <label class="form-label" for="dob">Date of Birth</label>
+                  <input type="date" class="form-input" id="dob" name="dob" required onclick="try{this.showPicker()}catch(e){}" style="cursor: pointer" />
+                  <div class="field-error" id="dob-error" aria-live="polite"></div>
                 </div>
+
                 <div>
-                  <label class="form-label" for="age" data-i18n="f_age">Age</label>
-                  <input type="number" class="form-input" id="age" name="age" min="3" max="18" placeholder="Age"
-                    data-i18n-ph="ph_age" required />
+                  <label class="form-label" for="nationality">Nationality</label>
+                  <input type="text" class="form-input" id="nationality" name="nationality" placeholder="e.g. Kuwaiti" required />
+                  <div class="field-error" id="nationality-error" aria-live="polite"></div>
                 </div>
-                <div>
-                  <label class="form-label" for="nationality" data-i18n="f_nationality">Nationality</label>
-                  <input type="text" class="form-input" id="nationality" name="nationality" placeholder="e.g. Kuwaiti"
-                    data-i18n-ph="ph_nationality" />
-                </div>
-                <div>
-                  <label class="form-label" for="stage" data-i18n="f_stage">School Stage</label>
-                  <select class="form-select" id="stage" name="stage" required>
-                    <option value="" data-i18n="sel_stage">
-                      Select stage
-                    </option>
-                    <option value="kindergarten" data-i18n="opt_kinder">
-                      Kindergarten
-                    </option>
-                    <option value="primary" data-i18n="opt_primary">
-                      Primary
-                    </option>
-                    <option value="middle" data-i18n="opt_middle">
-                      Middle School
-                    </option>
-                    <option value="high" data-i18n="opt_high">
-                      High School
-                    </option>
-                  </select>
-                </div>
-                <div>
-                  <label class="form-label" for="civil" data-i18n="f_civil">Civil ID</label>
-                  <input type="text" class="form-input" id="civil" name="civil" placeholder="Civil ID number"
-                    data-i18n-ph="ph_civil" />
-                </div>
+
                 <div class="md:col-span-2">
-                  <label class="form-label" for="medical" data-i18n="f_medical">Medical Conditions (if any)</label>
-                  <textarea class="form-input" id="medical" name="medical" rows="3"
-                    placeholder="Describe any relevant medical conditions..." data-i18n-ph="ph_medical"
-                    style="resize: vertical" aria-describedby="medical-help"></textarea>
-                  <div id="medical-help" class="text-xs text-gray-400 mt-1" data-i18n="f_medical_help">
-                    Optional: This helps us provide better support if needed.
+                  <label class="form-label" for="interested">Interested in</label>
+                  <div class="flex flex-col gap-2 mt-2" id="interested" role="group" aria-labelledby="interested-label">
+                    <label class="inline-flex items-center gap-3"><input type="checkbox" name="interested[]" value="monthly" /> Monthly package</label>
+                    <label class="inline-flex items-center gap-3"><input type="checkbox" name="interested[]" value="summer" /> Summer camp</label>
+                    <label class="inline-flex items-center gap-3"><input type="checkbox" name="interested[]" value="individual" /> Individual sessions</label>
+                    <label class="inline-flex items-center gap-3"><input type="checkbox" name="interested[]" value="workshops" /> Workshops</label>
+                    <label class="inline-flex items-center gap-3"><input type="checkbox" name="interested[]" value="english" /> English courses</label>
                   </div>
+                  <div class="field-error" id="interested-error" aria-live="polite"></div>
+                </div>
+
+                <div class="md:col-span-2">
+                  <label class="form-label" for="message">Message</label>
+                  <textarea class="form-input" id="message" name="message" rows="4" placeholder="Write your message here..." style="resize: vertical"></textarea>
                 </div>
               </div>
             </div>
 
+            <div class="mt-8">
+              <label class="flex items-start gap-3 text-sm text-gray-400 mb-3 text-left cursor-pointer">
+                <input type="checkbox" id="terms" class="mt-0.5 w-4 h-4 accent-orange-500 rounded" />
+                <span>I agree to the Terms & Conditions and Privacy Policy of B-Genius Academy. I confirm that all information provided is accurate.</span>
+              </label>
+              <div class="field-error" id="terms-error" aria-live="polite"></div>
+              <button onclick="submitForm()" class="btn-primary w-full justify-center text-lg py-4">
+                Submit Registration
+              </button>
+            </div>
+
             <!-- STEP 2: Parent Info -->
+            <!--
             <div class="step-panel" id="step-2">
               <div class="grid md:grid-cols-2 gap-5">
                 <div class="md:col-span-2">
@@ -670,8 +658,10 @@
                 </div>
               </div>
             </div>
+            -->
 
             <!-- STEP 3: Program Details -->
+            <!--
             <div class="step-panel" id="step-3">
               <div class="grid md:grid-cols-2 gap-5">
                 <div class="md:col-span-2">
@@ -740,7 +730,7 @@
                 <div>
                   <label class="form-label" for="days-checkboxes" data-i18n="f_days">Attendance Days</label>
                   <div class="flex flex-wrap gap-2 mt-1" id="days-checkboxes" role="group" aria-labelledby="days-label">
-                    <!-- Injected by JS -->
+                
                   </div>
                 </div>
                 <div>
@@ -771,9 +761,11 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
+            -->
 
             <!-- STEP 4: Review & Confirm -->
+            <!--
             <div class="step-panel" id="step-4">
               <div class="text-center py-8">
                 <div class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6" style="
@@ -791,10 +783,10 @@
                   contact you within 24 hours.
                 </p>
                 <div id="review-summary" class="text-left rounded-2xl p-6 mb-6" style="background: #f0f5fb">
-                  <!-- Summary injected by JS -->
-                </div>
+                Summary injected by JS -->
+                <!-- </div> -->
                 <!-- Terms -->
-                <label class="flex items-start gap-3 text-sm text-gray-400 mb-6 text-left cursor-pointer">
+                <!-- <label class="flex items-start gap-3 text-sm text-gray-400 mb-6 text-left cursor-pointer">
                   <input type="checkbox" id="terms" class="mt-0.5 w-4 h-4 accent-orange-500 rounded" />
                   <span data-i18n="terms_text">I agree to the Terms & Conditions and Privacy Policy of
                     B-Genius Academy. I confirm that all information provided
@@ -806,6 +798,7 @@
                 </button>
               </div>
             </div>
+            -->
 
             <!-- Success State -->
             <div class="step-panel" id="step-success">
@@ -831,7 +824,7 @@
           </form>
 
           <!-- Navigation buttons -->
-          <div class="flex justify-between mt-8" id="form-nav">
+          <div class="flex justify-between mt-8" id="form-nav" style="display:none">
             <button id="btn-prev" onclick="prevStep()"
               class="hidden px-6 py-3 rounded-full font-semibold text-sm transition-all hover:bg-gray-100"
               style="border: 1.5px solid #e0e8f0; color: #4a5568" data-i18n="btn_back">
@@ -846,6 +839,8 @@
       </div>
     </div>
   </section>
+
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
 
   <!-- ══════════════════════════════════════════════════
      CTA SECTION
